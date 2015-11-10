@@ -24,7 +24,7 @@
       </div>
       <div class="form-group select-group">
         <div class="select-input">
-          <select ng-model="addCarEvt" ng-options="trip.cars for trip in trips | unique: 'cars' ">
+          <select ng-model="carFilter.cars" ng-options="trip.cars as trip.cars for trip in trips">
           </select>
         </div>
         <div class="add-car-input">
@@ -40,7 +40,7 @@
     <div id="current-result">
       <h1>{{trip.mpg}} Average MPG</h1>
     </div>
-    <div class="results" ng-repeat="trip in trips track by $index">
+    <div class="results" ng-model="carFilter.cars" ng-repeat="trip in trips track by $index| orderBy:'dates' | filter:carFilter">
       <div class="dates">
         <h3>Date</h3>
         <p>{{trip.dates}}</p>

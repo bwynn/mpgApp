@@ -1,1 +1,1 @@
-angular.module("mpgApp", [])
+angular.module("mpgApp", ["ui"])
