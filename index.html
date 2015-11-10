@@ -14,7 +14,7 @@
   <header></header>
 
   <section id="user-input">
-    <form ng-submit="updateData( newCar )" class="form">
+    <form name="dataForm" ng-submit="updateData( newCar )" class="form" novalidate>
       <div class="form-group">
         <input ng-model="miles" type="number" placeholder="miles" required/>
         <label for="miles">Miles</label>
@@ -24,25 +24,24 @@
         <label for="gallons">Gallons</label>
       </div>
       <div class="form-group select-group">
-        <div class="select-input" ng-hide="carFilter.cars=='addNewCar'">
-          <label>Select a car</label>
-          <select ng-model="carFilter.cars">
-            <option value="addNewCar">Add a new car</option>
-            <option ng-repeat="trip in trips | unique: 'cars' track by $index">{{trip.cars}}</option>
-          </select>
-        </div>
-        <div class="add-car-input" ng-show="carFilter.cars=='addNewCar'">
-          <label for="car">Add a Car</label>
+        <div class="add-car-input">
+          <label for="car">Car</label>
           <input ng-model="newCar" type="text" required/>
         </div>
       </div>
-      <button type="submit">Get MPG</button>
+      <button type="submit" ng-disabled="dataForm.$invalid">Get MPG</button>
     </form>
   </section>
 
   <section id="user-results">
     <div id="current-result">
       <h1>{{trip.mpg}} Average MPG</h1>
+    </div>
+    <div class="select-input">
+      <label>Select a car</label>
+      <select ng-model="carFilter.cars">
+        <option ng-repeat="trip in trips | unique: 'cars' track by $index">{{trip.cars}}</option>
+      </select>
     </div>
     <div class="results" ng-repeat="trip in trips | filter:carFilter track by $index ">
       <div class="dates result-cont">

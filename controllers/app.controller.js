@@ -35,14 +35,13 @@ angular.module("mpgApp")
     $scope.trip.mpg = mpg;
     $scope.trip.cars = newCar;
     $scope.trip.dates = $scope.timeStamp().date;
-    $scope.carFilter.cars = newCar;
 
     // push the trip object into the history array
     $scope.trips.push( $scope.trip );
-    //console.log($scope.trips);
+
     // push the history array to localStorage
     $scope.setDataToStorage();
-    console.log( $scope.trips );
+    //console.log( $scope.trips );
   };
 
   $scope.getFromStorage = function() {
@@ -69,7 +68,7 @@ angular.module("mpgApp")
         $scope.trips.push( $scope.getFromStorage().data[i] );
 
       }
-      console.log( $scope.trips );
+      //console.log( $scope.trips );
     }
   }();
 });

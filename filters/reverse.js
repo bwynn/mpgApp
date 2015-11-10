@@ -3,4 +3,4 @@ angular.module("mpgApp")
   return function(trips) {
     return trips.slice().reverse();
   }
-})
+});
