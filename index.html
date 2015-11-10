@@ -11,16 +11,17 @@
   <link href="assets/styles/mpg.main.css" rel="stylesheet"/>
 </head>
 <body ng-controller="mpgCtrl">
+  <header></header>
 
   <section id="user-input">
-    <form ng-submit="updateData( newCar )">
+    <form ng-submit="updateData( newCar )" class="form">
       <div class="form-group">
+        <input ng-model="miles" type="number" placeholder="miles"/>
         <label for="miles">Miles</label>
-        <input ng-model="miles" type="number"/>
       </div>
       <div class="form-group">
+        <input ng-model="gallons" type="number" placeholder="gallons"/>
         <label for="gallons">Gallons</label>
-        <input ng-model="gallons" type="number"/>
       </div>
       <div class="form-group select-group">
         <div class="select-input">

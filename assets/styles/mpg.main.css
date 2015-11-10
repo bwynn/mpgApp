@@ -1,10 +1,46 @@
+html, body {
+  height: 100%; }
+
 body {
   margin: 0;
   font-size: 18px;
-  font-family: 'Inconsolata', helvetica, sans-serif; }
+  font-family: 'Inconsolata', helvetica, sans-serif;
+  background-color: #EDECEC; }
   body > section {
     width: 100%;
     max-width: 800px;
     margin: 0 auto; }
+
+header {
+  width: 100%;
+  height: 2em;
+  background-color: black; }
+
+.form {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; }
+
+.form-group {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0.5em;
+  overflow: hidden; }
+  .form-group input {
+    font-size: 18px;
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box; }
+  .form-group label {
+    padding: 0.16667em;
+    font-size: 18px;
+    display: block; }
+
+.select-group {
+  width: 100%; }
+  .select-group input {
+    width: 100%; }
 
 /*# sourceMappingURL=mpg.main.css.map */

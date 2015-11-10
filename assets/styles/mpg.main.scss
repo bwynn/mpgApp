@@ -1,13 +1,71 @@
 $no-margin: 0;
 $font-size: 18px;
+$light-grey: #EDECEC;
+$padding: 0.5em;
+$full-width: 100%;
+
+@mixin flexbox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-row {
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+@mixin flex-align-content {
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+
+html, body { height: 100%; }
 
 body {
   margin: $no-margin;
   font-size: $font-size;
   font-family: 'Inconsolata', helvetica, sans-serif;
+  background-color: $light-grey;
   > section {
-    width: 100%;
+    width: $full-width;
     max-width: 800px;
     margin: 0 auto;
+  }
+}
+
+header {
+  width: $full-width;
+  height: 2em;
+  background-color: black;
+}
+
+.form {
+  @include flexbox;
+  @include flex-row;
+}
+
+.form-group {
+  width: $full-width / 2;
+  box-sizing: border-box;
+  padding: $padding;
+  overflow: hidden;
+  input {
+    font-size: $font-size;
+    padding: $padding;
+    width: $full-width;
+    box-sizing: border-box;
+  }
+  label{
+    padding: $padding / 3;
+    font-size: $font-size;
+    display: block;
+  }
+}
+
+.select-group {
+  width: $full-width;
+  input {
+    width: $full-width;
   }
 }

@@ -8,6 +8,8 @@ angular.module("mpgApp")
   // The $scope.trips array holds all records, both db and session object (trip)
   $scope.trips = [];
 
+  $scope.limit = 5;
+
   // New instantiation to create a new record for each user visit
   $scope.trip = new Trip();
 
