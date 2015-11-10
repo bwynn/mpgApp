@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAGA,IAAK;EACH,MAAM,EAJI,CAAC;EAKX,SAAS,EAJC,IAAI;EAKd,WAAW,EAAE,oCAAoC;EACjD,cAAU;IACR,KAAK,EAAE,IAAI;IACX,SAAS,EAAE,KAAK;IAChB,MAAM,EAAE,MAAM",
+"sources": ["mpg.main.scss"],
 "names": [],
 "file": "mpg.main.css"
 }

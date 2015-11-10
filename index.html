@@ -6,8 +6,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.js"></script>
   <script src="app.js"></script>
   <script src="factories/trip.js"></script>
-  <script src="filters/reverse.js"></script>
   <script src="controllers/app.controller.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href="assets/styles/mpg.main.css" rel="stylesheet"/>
 </head>
 <body ng-controller="mpgCtrl">
@@ -24,8 +24,6 @@
       </div>
       <div class="form-group select-group">
         <div class="select-input">
-          <select ng-model="carFilter.cars" ng-options="trip.cars as trip.cars for trip in trips">
-          </select>
         </div>
         <div class="add-car-input">
           <label for="car">Add a Car</label>
@@ -39,8 +37,9 @@
   <section id="user-results">
     <div id="current-result">
       <h1>{{trip.mpg}} Average MPG</h1>
+      <select ng-model="carFilter.cars" ng-options="trip.cars as trip.cars for trip in trips | unique: 'cars' "></select>
     </div>
-    <div class="results" ng-model="carFilter.cars" ng-repeat="trip in trips track by $index| orderBy:'dates' | filter:carFilter">
+    <div class="results" ng-model="carFilter.cars" ng-repeat="trip in trips track by $index | orderBy:'dates' | filter:carFilter ">
       <div class="dates">
         <h3>Date</h3>
         <p>{{trip.dates}}</p>

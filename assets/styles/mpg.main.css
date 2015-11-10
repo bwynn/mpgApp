@@ -1,3 +1,10 @@
-
+body {
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Inconsolata', helvetica, sans-serif; }
+  body > section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto; }
 
 /*# sourceMappingURL=mpg.main.css.map */

@@ -1,0 +1,13 @@
+$no-margin: 0;
+$font-size: 18px;
+
+body {
+  margin: $no-margin;
+  font-size: $font-size;
+  font-family: 'Inconsolata', helvetica, sans-serif;
+  > section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

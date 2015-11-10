@@ -19,8 +19,8 @@ angular.module("mpgApp")
 
   $scope.timeStamp = function() {
     var date = new Date();
-    var today = date.toDateString();
-    return { date: today };
+    //var today = date.toDateString();
+    return { date: date };
   };
 
   $scope.setDataToStorage = function() {
