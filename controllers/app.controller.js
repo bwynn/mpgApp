@@ -3,7 +3,6 @@ angular.module("mpgApp")
   // form controller
   $scope.miles = "";
   $scope.gallons = "";
-  $scope.addCarEvt = "Add a new car";
 
   // The $scope.trips array holds all records, both db and session object (trip)
   $scope.trips = [];

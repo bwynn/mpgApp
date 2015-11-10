@@ -3,6 +3,7 @@ $font-size: 18px;
 $light-grey: #EDECEC;
 $padding: 0.5em;
 $full-width: 100%;
+$dark-grey: #333;
 
 @mixin flexbox {
   display: -webkit-flex;
@@ -74,6 +75,10 @@ header {
   .results {
     @include flexbox;
     @include flex-row;
+    &:nth-child(odd) {
+      background-color: $dark-grey;
+      color: $light-grey;
+    }
     .result-cont {
       padding: $padding * 2;
       flex-grow: 1;
