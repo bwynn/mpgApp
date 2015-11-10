@@ -43,4 +43,14 @@ header {
   .select-group input {
     width: 100%; }
 
+#user-results .results {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap; }
+  #user-results .results .result-cont {
+    padding: 1em;
+    flex-grow: 1; }
+
 /*# sourceMappingURL=mpg.main.css.map */

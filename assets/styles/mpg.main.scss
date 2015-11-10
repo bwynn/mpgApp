@@ -69,3 +69,14 @@ header {
     width: $full-width;
   }
 }
+
+#user-results {
+  .results {
+    @include flexbox;
+    @include flex-row;
+    .result-cont {
+      padding: $padding * 2;
+      flex-grow: 1;
+    }
+  }
+}

@@ -7,7 +7,7 @@ angular.module("mpgApp")
 
   // The $scope.trips array holds all records, both db and session object (trip)
   $scope.trips = [];
-
+  // Set LimitTo Value
   $scope.limit = 5;
 
   // New instantiation to create a new record for each user visit
@@ -21,13 +21,13 @@ angular.module("mpgApp")
 
   $scope.timeStamp = function() {
     var date = new Date();
-    //var today = date.toDateString();
-    return { date: date };
+    var today = date.toDateString();
+    return { date: today };
   };
 
   $scope.setDataToStorage = function() {
     // push the values into the local storage values as JSON data
-    localStorage.history = JSON.stringify( $scope.trips );
+    localStorage.history = angular.toJson( $scope.trips );
   };
 
   $scope.updateData = function(newCar) {
@@ -42,12 +42,12 @@ angular.module("mpgApp")
     //console.log($scope.trips);
     // push the history array to localStorage
     $scope.setDataToStorage();
-    //console.log( $scope.trips );
+    console.log( $scope.trips );
   };
 
   $scope.getFromStorage = function() {
       // declare a variable to parse out the local storage properties
-      var data = JSON.parse( localStorage.history );
+      var data = angular.fromJson( localStorage.history );
       // return data object
       //console.log( data );
       return {
@@ -69,7 +69,7 @@ angular.module("mpgApp")
         $scope.trips.push( $scope.getFromStorage().data[i] );
 
       }
-      //console.log( $scope.trips );
+      console.log( $scope.trips );
     }
   }();
 });
