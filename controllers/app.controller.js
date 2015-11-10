@@ -35,6 +35,7 @@ angular.module("mpgApp")
     $scope.trip.mpg = mpg;
     $scope.trip.cars = newCar;
     $scope.trip.dates = $scope.timeStamp().date;
+    $scope.carFilter.cars = newCar;
 
     // push the trip object into the history array
     $scope.trips.push( $scope.trip );
