@@ -3,7 +3,7 @@ html, body {
 
 body {
   margin: 0;
-  font-size: 18px;
+  font-size: 14px;
   font-family: 'Inconsolata', helvetica, sans-serif;
   background-color: #EDECEC; }
   body > section {
@@ -16,12 +16,29 @@ header {
   height: 2em;
   background-color: black; }
 
+label {
+  padding: 0.16667em;
+  font-size: 18.2px;
+  display: block;
+  text-align: center; }
+
 .form {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap; }
+  .form button {
+    width: 100%;
+    font-size: 2em;
+    padding: .2em;
+    margin: .5em 0;
+    margin: .5rem;
+    border: 2px solid #4A8A56; }
+  .form button[disabled] {
+    border: 2px solid maroon; }
+  .form button:focus {
+    outline: none; }
 
 .form-group {
   width: 50%;
@@ -29,20 +46,25 @@ header {
   padding: 0.5em;
   overflow: hidden; }
   .form-group input {
-    font-size: 18px;
+    font-size: 28px;
     padding: 0.5em;
     width: 100%;
     box-sizing: border-box; }
-  .form-group label {
-    padding: 0.16667em;
-    font-size: 18px;
-    display: block; }
+  .form-group .data-input {
+    padding: 1em 0.5em;
+    font-size: 2em;
+    text-align: center; }
+  .form-group .add-car-input label {
+    text-align: left; }
 
 .select-group {
   width: 100%; }
   .select-group input {
     width: 100%; }
 
+#user-results #current-result h1 {
+  font-size: 2em;
+  text-align: center; }
 #user-results .results {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -55,5 +77,10 @@ header {
   #user-results .results .result-cont {
     padding: 1em;
     flex-grow: 1; }
+#user-results .select-input select {
+  width: 100%;
+  font-size: 2em;
+  padding: .2em;
+  margin: .5em 0; }
 
 /*# sourceMappingURL=mpg.main.css.map */

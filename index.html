@@ -2,6 +2,7 @@
 <html ng-app="mpgApp">
 <head>
   <title>mpg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.js"></script>
   <script src="app.js"></script>
@@ -16,17 +17,17 @@
   <section id="user-input">
     <form name="dataForm" ng-submit="updateData( newCar )" class="form" novalidate>
       <div class="form-group">
-        <input ng-model="miles" type="number" placeholder="miles" required/>
+        <input class="data-input" ng-model="miles" type="number" placeholder="miles" required/>
         <label for="miles">Miles</label>
       </div>
       <div class="form-group">
-        <input ng-model="gallons" type="number" placeholder="gallons" required/>
+        <input class="data-input" ng-model="gallons" type="number" placeholder="gallons" required/>
         <label for="gallons">Gallons</label>
       </div>
       <div class="form-group select-group">
         <div class="add-car-input">
+          <input ng-model="newCar" type="text" placeholder="add your car" required/>
           <label for="car">Car</label>
-          <input ng-model="newCar" type="text" required/>
         </div>
       </div>
       <button type="submit" ng-disabled="dataForm.$invalid">Get MPG</button>
