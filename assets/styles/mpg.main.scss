@@ -109,6 +109,18 @@ label{
       text-align: center;
     }
   }
+  .averages-section {
+    @include flexbox;
+    border: 1px solid black;
+    padding: $padding;
+    .btn-group {
+      margin-left: auto;
+      button {
+        @include buttons_select;
+        font-size: $font-size * 1.1;
+      }
+    }
+  }
   .results {
     @include flexbox;
     @include flex-row;

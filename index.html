@@ -35,8 +35,17 @@
   </section>
 
   <section id="user-results">
-    <div id="current-result">
-      <h1>{{trip.mpg}} Average MPG</h1>
+    <div class="averages-section">
+      <div id="current-result">
+        <h1>{{trip.mpg}} Average MPG</h1>
+      </div>
+      <div id="average-result">
+        <h1>{{averages}} Average MPG</h1>
+      </div>
+      <div class="btn-group">
+        <button ng-click="averageMpg(trips)" value="carAverage">Car Average</button>
+        <button value="todayAverage">Todays Avg</button>
+      </div>
     </div>
     <div class="select-input">
       <label>Select a car</label>
@@ -44,7 +53,7 @@
         <option ng-repeat="trip in trips | unique: 'cars' track by $index">{{trip.cars}}</option>
       </select>
     </div>
-    <div class="results" ng-repeat="trip in trips | filter:carFilter track by $index ">
+    <div class="results" ng-repeat="trip in trips | filter:carFilter | orderBy:'-dates' track by $index ">
       <div class="dates result-cont">
         <h3>Date</h3>
         <p>{{trip.dates}}</p>

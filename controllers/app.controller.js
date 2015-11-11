@@ -44,6 +44,17 @@ angular.module("mpgApp")
     //console.log( $scope.trips );
   };
 
+  $scope.averageMpg = function(arr) {
+    var sum = 0;
+    var length = arr.length;
+    for (var i = 0; i < length; i++) {
+      // add values up
+      sum += arr[i].mpg;
+    }
+    var avg = sum/length;
+    $scope.averages = avg.toFixed(3);
+  };
+
   $scope.getFromStorage = function() {
       // declare a variable to parse out the local storage properties
       var data = angular.fromJson( localStorage.history );
@@ -68,7 +79,7 @@ angular.module("mpgApp")
         $scope.trips.push( $scope.getFromStorage().data[i] );
 
       }
-      //console.log( $scope.trips );
+      console.log( $scope.trips );
     }
   }();
 });
