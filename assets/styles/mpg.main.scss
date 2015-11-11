@@ -119,6 +119,7 @@ label{
     .result-cont {
       padding: $padding * 2;
       flex-grow: 1;
+      font-size: $font-size * .8;
     }
   }
   .select-input {

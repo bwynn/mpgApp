@@ -76,7 +76,8 @@ label {
     color: #EDECEC; }
   #user-results .results .result-cont {
     padding: 1em;
-    flex-grow: 1; }
+    flex-grow: 1;
+    font-size: 11.2px; }
 #user-results .select-input select {
   width: 100%;
   font-size: 2em;
