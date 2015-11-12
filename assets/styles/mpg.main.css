@@ -62,23 +62,29 @@ label {
   .select-group input {
     width: 100%; }
 
-#user-results #current-result h1 {
-  font-size: 2em;
+#user-results h3 {
+  font-size: 1.3em;
   text-align: center; }
+#user-results .mpg-cont {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  #user-results .mpg-cont .mpg-btn-container {
+    width: 20%;
+    margin-left: auto; }
 #user-results .averages-section {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid black;
   padding: 0.5em; }
   #user-results .averages-section .btn-group {
     margin-left: auto; }
-    #user-results .averages-section .btn-group button {
-      width: 100%;
-      font-size: 2em;
-      padding: .2em;
-      margin: .5em 0;
-      font-size: 15.4px; }
+#user-results button {
+  width: 100%;
+  font-size: 2em;
+  padding: .2em;
+  margin: .5em 0;
+  font-size: 15.4px; }
 #user-results .results {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -92,6 +98,8 @@ label {
     padding: 1em;
     flex-grow: 1;
     font-size: 11.2px; }
+    #user-results .results .result-cont p {
+      text-align: center; }
 #user-results .select-input select {
   width: 100%;
   font-size: 2em;

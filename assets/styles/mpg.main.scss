@@ -103,23 +103,27 @@ label{
 }
 
 #user-results {
-  #current-result {
-    h1 {
-      font-size: 2em;
+    h3 {
+      font-size: 1.3em;
       text-align: center;
+    }
+  .mpg-cont {
+    @include flexbox;
+    .mpg-btn-container {
+      width: 20%;
+      margin-left: auto;
     }
   }
   .averages-section {
     @include flexbox;
-    border: 1px solid black;
     padding: $padding;
     .btn-group {
       margin-left: auto;
-      button {
-        @include buttons_select;
-        font-size: $font-size * 1.1;
-      }
     }
+  }
+  button {
+    @include buttons_select;
+    font-size: $font-size * 1.1;
   }
   .results {
     @include flexbox;
@@ -132,6 +136,9 @@ label{
       padding: $padding * 2;
       flex-grow: 1;
       font-size: $font-size * .8;
+      p {
+        text-align: center;
+      }
     }
   }
   .select-input {

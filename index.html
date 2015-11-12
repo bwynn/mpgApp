@@ -35,18 +35,26 @@
   </section>
 
   <section id="user-results">
-    <div class="averages-section">
-      <div id="current-result">
-        <h1>{{trip.mpg}} Average MPG</h1>
+    <div class="mpg-cont">
+
+      <div class="averages-section" ng-switch on="data.mode">
+        <div id="current-result" ng-switch-when="Current">
+          <h1>{{trip.mpg}} MPG currently</h1>
+        </div>
+        <div id="average-result" ng-switch-default ng-init="averageMpg(trips)">
+          <h1>{{averages | filter:carFilter.cars}} Average MPG</h1>
+        </div>
       </div>
-      <div id="average-result">
-        <h1>{{averages}} Average MPG</h1>
+
+      <div class="mpg-btn-container">
+        <div class="btn-group mpg-btns" ng-repeat="button in ['Average', 'Current']">
+          <input type="radio" ng-model="data.mode" value="{{button}}" ng-checked="$first"/>
+          <span>{{button}}<span>
+        </div>
       </div>
-      <div class="btn-group">
-        <button ng-click="averageMpg(trips)" value="carAverage">Car Average</button>
-        <button value="todayAverage">Todays Avg</button>
-      </div>
+
     </div>
+
     <div class="select-input">
       <label>Select a car</label>
       <select ng-model="carFilter.cars">

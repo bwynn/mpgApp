@@ -9,6 +9,8 @@ angular.module("mpgApp")
   // Set LimitTo Value
   $scope.limit = 5;
 
+  $scope.data = {};
+
   // New instantiation to create a new record for each user visit
   $scope.trip = new Trip();
 
