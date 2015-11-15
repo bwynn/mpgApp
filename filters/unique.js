@@ -1,4 +1,5 @@
-.filter('unique', function () {
+angular.module("mpgApp")
+    .filter('unique', function () {
 
     return function (items, filterOn) {
 

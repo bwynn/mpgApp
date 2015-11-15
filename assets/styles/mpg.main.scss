@@ -108,6 +108,7 @@ label{
       text-align: center;
     }
   .mpg-cont {
+    padding: $padding;
     @include flexbox;
     .mpg-btn-container {
       width: 20%;
@@ -117,6 +118,7 @@ label{
   .averages-section {
     @include flexbox;
     padding: $padding;
+    width: 70%;
     .btn-group {
       margin-left: auto;
     }
@@ -128,6 +130,7 @@ label{
   .results {
     @include flexbox;
     @include flex-row;
+    margin: $padding;
     &:nth-child(odd) {
       background-color: $dark-grey;
       color: $light-grey;
@@ -142,6 +145,7 @@ label{
     }
   }
   .select-input {
+    padding: $padding;
     select {
       @include buttons_select;
       option {

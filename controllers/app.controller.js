@@ -31,6 +31,17 @@ angular.module("mpgApp")
     localStorage.history = angular.toJson( $scope.trips );
   };
 
+  $scope.averages = function( arr ) {
+  var sum = 0;
+  var length = arr.length;
+  for (var i = 0; i < length; i++) {
+    // add values up
+    sum += arr[i].mpg;
+  }
+  var avg = sum/length;
+  $scope.averageMpg = avg.toFixed(3);
+};
+
   $scope.updateData = function(newCar) {
     var mpg = $scope.result();
 
@@ -44,17 +55,6 @@ angular.module("mpgApp")
     // push the history array to localStorage
     $scope.setDataToStorage();
     //console.log( $scope.trips );
-  };
-
-  $scope.averageMpg = function(arr) {
-    var sum = 0;
-    var length = arr.length;
-    for (var i = 0; i < length; i++) {
-      // add values up
-      sum += arr[i].mpg;
-    }
-    var avg = sum/length;
-    $scope.averages = avg.toFixed(3);
   };
 
   $scope.getFromStorage = function() {
