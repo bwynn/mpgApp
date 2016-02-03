@@ -1,0 +1,18 @@
+{
+  "name": "MyMpg",
+  "main": "server.js",
+  "dependencies": {
+    "express": "latest",
+    "express-session": "latest",
+    "mongoose": "latest",
+    "body-parser": "latest",
+    "bcrypt-nodejs": "latest",
+    "cookie-parser": "latest",
+    "method-override": "latest",
+    "morgan": "latest",
+    "connect-flash": "latest",
+    "flash": "latest",
+    "passport": "latest",
+    "passport-local": "latest"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "MyMpg",
+  "version": "0.1.2",
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-ui": "latest"
+  }
+}
