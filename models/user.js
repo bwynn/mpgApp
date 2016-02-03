@@ -1,9 +1,14 @@
+// models/user.js
+
+// packages
+// =============================================================================
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 var Record = require('./record');
 
 // user schema
+// =============================================================================
 var UserSchema = new Schema({
   local: {
     username: String,
