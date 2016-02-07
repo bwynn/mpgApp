@@ -16,7 +16,7 @@ var UserSchema = new Schema({
   },
   details: {
     email: String,
-    record: [Record]
+    record: [Record.schema]
   }
 });
 

@@ -16,7 +16,7 @@ module.exports = function(passport) {
 
   // used to deserialize the user
   passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, done) {
+    User.findById(id, function(err, user) {
       done(err, user);
     });
   });
@@ -24,7 +24,7 @@ module.exports = function(passport) {
   // sign up
   // =============================================================================
 
-  passport.use('local-strategy', new LocalStrategy({
+  passport.use('local-signup', new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password',
     passReqToCallback: true // pass back the req to the callback
@@ -36,21 +36,21 @@ module.exports = function(passport) {
     process.nextTick(function() {
 
       // find user by email
-      User.findOne({'local.username': email}, function(err, user) {
+      User.findOne({'local.username': username}, function(err, user) {
         if (err) {
           return done(err);
         }
 
         // check for duplicate users
         if (user) {
-          return done(null, false, req.flash('signupMessage', 'This username is already taken'));
+          return done(null, false , req.flash('signupMessage', 'This username is already taken'));
         }
         else {
           // no username already taken
           var newUser = new User();
 
           // set credentials
-          newUser.local.username = email;
+          newUser.local.username = username;
           newUser.local.password = newUser.generateHash(password);
 
           // save the user

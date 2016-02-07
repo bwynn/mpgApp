@@ -6,6 +6,7 @@ var User = require('../models/user');
 var Record = require('../models/record');
 
 module.exports = function(app, passport) {
+  var profile = require('../controllers/profileController.js');
 // server routes
 // =============================================================================
 
@@ -17,6 +18,10 @@ app.get('/api/login', function(req, res) {
 });
 
 // post
+app.post('/api/login', passport.authenticate('local-login', {
+  successRedirect: '/profile', // redirect to the main profile page
+  failureRedirect: '/login' // redirect back to the login page if login fails
+}));
 
 // signup routes ===============================================================
 // get
@@ -26,6 +31,10 @@ app.get('/api/signup', function(req, res) {
 });
 
 // post
+app.post('/api/signup', passport.authenticate('local-signup', {
+  successRedirect: '/profile', // redirect to profile page
+  failureRedirect: '/signup'
+}));
 
 // logout routes ===============================================================
 // get
@@ -35,7 +44,7 @@ app.get('/api/logout', function(req, res) {
 });
 
 // user routes =================================================================
-// require controllers/userController.js
+app.get('/api/profile/', isLoggedIn, profile.getProfile);
 
 // frontend routes
 // =============================================================================

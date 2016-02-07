@@ -28,7 +28,10 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 
 // passport config
-app.use(session({secret: 'superSecret'}))
+app.use(session({secret: 'superSecret'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 // routes ======================================================================
 require('./routes/appRoutes')(app, passport);
