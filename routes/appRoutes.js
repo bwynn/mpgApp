@@ -6,7 +6,8 @@ var User = require('../models/user');
 var Record = require('../models/record');
 
 module.exports = function(app, passport) {
-  var profile = require('../controllers/profileController.js');
+  var profileCtrl = require('../controllers/profileController');
+  var recordCtrl = require('../controllers/recordController');
 // server routes
 // =============================================================================
 
@@ -44,7 +45,16 @@ app.get('/api/logout', function(req, res) {
 });
 
 // user routes =================================================================
-app.get('/api/profile/', isLoggedIn, profile.getProfile);
+// get
+app.get('/api/profile/', isLoggedIn, profileCtrl.getProfile);
+// update user
+app.put('/api/profile', isLoggedIn, profileCtrl.updateProfile);
+// delete user
+app.delete('/api/profile', isLoggedIn, profileCtrl.deleteProfile);
+// update record
+app.put('/api/record', isLoggedIn, recordCtrl.updateRecord);
+// delete record
+app.put('/api/record/delete', isLoggedIn, recordCtrl.deleteRecord);
 
 // frontend routes
 // =============================================================================

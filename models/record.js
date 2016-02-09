@@ -8,7 +8,7 @@ var Schema = mongoose.Schema;
 // record schema
 // =============================================================================
 var RecordSchema = new Schema({
-  time: Date,
+  time: {type: Date, default: Date.now},
   mpg: Number,
   car: String
 });
