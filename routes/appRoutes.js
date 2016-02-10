@@ -8,6 +8,7 @@ var Record = require('../models/record');
 module.exports = function(app, passport) {
   var profileCtrl = require('../controllers/profileController');
   var recordCtrl = require('../controllers/recordController');
+  var carCtrl = require('../controllers/carController');
 // server routes
 // =============================================================================
 
@@ -53,7 +54,7 @@ app.put('/api/profile', isLoggedIn, profileCtrl.updateProfile);
 app.delete('/api/profile', isLoggedIn, profileCtrl.deleteProfile);
 
 // add a car
-app.put('/api/profile/add_car', isLoggedIn, profileCtrl.addCar);
+app.put('/api/profile/add_car', isLoggedIn, carCtrl.addCar);
 
 // update record
 app.put('/api/record', isLoggedIn, recordCtrl.updateRecord);
