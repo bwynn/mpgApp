@@ -9,7 +9,7 @@ exports.updateRecord = function(req, res) {
     // set value for mpg
     record.mpg = req.body.mpg;
     // set value for car
-    record.car = req.body.car;
+    record.car = req.body.car; // get this from the user's car(s) - list model name - handle property on front end 
     User.update({"details.email": req.body.email}, { // query the 'details.email' property based on user email
       $push: { // from there, push
         "details.record": record // object to the user details

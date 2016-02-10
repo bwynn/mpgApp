@@ -51,6 +51,10 @@ app.get('/api/profile/', isLoggedIn, profileCtrl.getProfile);
 app.put('/api/profile', isLoggedIn, profileCtrl.updateProfile);
 // delete user
 app.delete('/api/profile', isLoggedIn, profileCtrl.deleteProfile);
+
+// add a car
+app.put('/api/profile/add_car', isLoggedIn, profileCtrl.addCar);
+
 // update record
 app.put('/api/record', isLoggedIn, recordCtrl.updateRecord);
 // delete record

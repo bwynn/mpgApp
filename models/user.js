@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 var Record = require('./record');
+var Car = require('./car');
 
 // user schema
 // =============================================================================
@@ -16,7 +17,8 @@ var UserSchema = new Schema({
   },
   details: {
     email: String,
-    record: [Record.schema]
+    record: [Record.schema],
+    car: [Car.schema]
   }
 });
 
