@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var User = require('../models/user');
+var Car = require('../models/car');
 
 // this method will fetch a user's profile and load it into the profile view
 exports.getProfile = function(req, res) {

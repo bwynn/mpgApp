@@ -27,3 +27,17 @@ exports.addCar = function(req, res) {
     });
   });
 };
+
+exports.removeCar = function(req, res) {
+  User.findOne({'_id': req.session.passport.user}, function(err, user) {
+    User.update({'details.email': req.body.email}, {
+      $pull: { 'details.car': {'_id': req.body.id} }
+    }, function(err, user) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json({message: "Car successfully removed"});
+    });
+  });
+};

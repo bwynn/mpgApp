@@ -9,7 +9,7 @@ exports.updateRecord = function(req, res) {
     // set value for mpg
     record.mpg = req.body.mpg;
     // set value for car
-    record.car = req.body.car; // get this from the user's car(s) - list model name - handle property on front end 
+    record.car = req.body.car; // get this from the user's car(s) - list model name - handle property on front end
     User.update({"details.email": req.body.email}, { // query the 'details.email' property based on user email
       $push: { // from there, push
         "details.record": record // object to the user details
@@ -27,7 +27,7 @@ exports.updateRecord = function(req, res) {
 exports.deleteRecord = function(req, res) {
   User.findOne({'_id': req.session.passport.user}, function(err, user) {
     User.update({'details.email': req.body.email}, {
-      $pull: { 'details.record': {'_id': req.body.id} } // get data.id value on front end
+      $pull: { 'details.car': {'_id': req.body.id} } // get data.id value on front end
     }, function(err) {
       if (err) {
         res.send(err);

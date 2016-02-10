@@ -55,6 +55,8 @@ app.delete('/api/profile', isLoggedIn, profileCtrl.deleteProfile);
 
 // add a car
 app.put('/api/profile/add_car', isLoggedIn, carCtrl.addCar);
+// remove car
+app.put('/api/profile/remove_car', isLoggedIn, carCtrl.removeCar);
 
 // update record
 app.put('/api/record', isLoggedIn, recordCtrl.updateRecord);
