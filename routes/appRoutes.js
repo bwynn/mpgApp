@@ -65,6 +65,10 @@ app.put('/api/record/delete', isLoggedIn, recordCtrl.deleteRecord);
 
 // frontend routes
 // =============================================================================
+app.get('*', function(req, res, next) {
+  res.sendFile(path.join(__dirname, '../public/views/index.html'));
+});
+
 };
 
 function isLoggedIn(req, res, next) {

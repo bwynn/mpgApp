@@ -14,5 +14,9 @@
     "flash": "latest",
     "passport": "latest",
     "passport-local": "latest"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
   }
 }

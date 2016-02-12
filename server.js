@@ -33,6 +33,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+// set static files location
+app.use(express.static(__dirname + '/public'));
+
 // routes ======================================================================
 require('./routes/appRoutes')(app, passport);
 

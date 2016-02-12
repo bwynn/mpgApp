@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="mpgApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMpg</title>
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-controller="MainController">
+    <header>
+      <a href="/profile">profile</a>
+      <a href="/car">car</a>
+      <a href="/logout">logout</a>
+      <a href="/signup">signup</a>
+      <a href="/login">login</a>
+
+    </header>
+
+    <section ng-view></section>
+
+    <!-- dependency scripts -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/angular-ui/build/angular-ui.min.js"></script>
+    <!-- controllers -->
+    <script src="js/controllers/mainCtrl.js"></script>
+    <script src="js/controllers/signupCtrl.js"></script>
+    <script src="js/controllers/carCtrl.js"></script>
+    <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/controllers/logoutCtrl.js"></script>
+    <script src="js/controllers/profileCtrl.js"></script>
+    <!-- services/factories -->
+    <!-- routes -->
+    <script src="js/app-routes.js"></script>
+    <!-- app -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

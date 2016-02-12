@@ -4,6 +4,7 @@
   "dependencies": {
     "angular": "latest",
     "angular-route": "latest",
-    "angular-ui": "latest"
+    "angular-ui": "latest",
+    "font-awesome": "latest"
   }
 }
