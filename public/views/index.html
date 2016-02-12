@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body ng-controller="MainController">
-    <header>
-      <a href="/profile">profile</a>
-      <a href="/car">car</a>
-      <a href="/logout">logout</a>
-      <a href="/signup">signup</a>
-      <a href="/login">login</a>
-
+    <header class="global-header">
+      <h1>MyMpg</h1>
+      <ul>
+        <li><a href="/profile" class="fa fa-user"></a></li>
+        <li><a href="/logout">logout</a></li>
+      </ul>
     </header>
 
     <section ng-view></section>
