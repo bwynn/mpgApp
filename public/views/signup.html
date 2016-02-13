@@ -1,1 +1,20 @@
-<h1>{{hello}}</h1>
+<form action="/api/signup" method="post" class="form signup-form">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="text-input" name="email" required/>
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="text-input" name="username" required/>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="text" class="text-input" name="password" required/>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn submit-btn">Submit</button>
+  </div>
+</form>
+<div class="login-link">
+  <a href="/login" class="btn btn-link">or Log In</a>
+</div>

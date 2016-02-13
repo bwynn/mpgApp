@@ -8,15 +8,12 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body ng-controller="MainController">
-    <header class="global-header">
-      <h1>MyMpg</h1>
-      <ul>
-        <li><a href="/profile" class="fa fa-user"></a></li>
-        <li><a href="/logout">logout</a></li>
-      </ul>
-    </header>
+
+    <header class="global-header" ng-include="'views/header.html'"></header>
 
     <section ng-view></section>
+
+    <footer class="global-footer" ng-include="'views/footer.html'"></footer>
 
     <!-- dependency scripts -->
     <script src="libs/angular/angular.min.js"></script>
@@ -30,6 +27,8 @@
     <script src="js/controllers/logoutCtrl.js"></script>
     <script src="js/controllers/profileCtrl.js"></script>
     <!-- services/factories -->
+    <script src="js/services/loginService.js"></script>
+    <script src="js/services/userService.js"></script>
     <!-- routes -->
     <script src="js/app-routes.js"></script>
     <!-- app -->
