@@ -21,7 +21,7 @@ angular.module('appRoutes', [])
         templateUrl: '/views/profile.html',
         controller: 'ProfileController'
       }).
-      when('/car', {
+      when('/profile/:model', {
         templateUrl: '/views/car.html',
         controller: 'CarController'
       })
