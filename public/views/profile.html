@@ -1,1 +1,15 @@
-<h1>{{hello}}</h1>
+<div class="profile">
+  <div class="profile-img">
+    <img src=""/>
+  </div>
+  <div class="profile-content">
+    <h2>{{user.local.username}}</h2>
+    <h4>{{user.details.email}}</h4>
+    <p><a href="#">Update your profile</a></p>
+  </div>
+</div>
+<div class="cars">
+  <div ng-repeat="car in user.details.car">
+    <span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span>
+  </div>
+</div>
