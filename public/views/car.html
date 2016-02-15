@@ -1,1 +1,25 @@
-<div ng-repeat=""></div>
+<table>
+  <tbody>
+    <tr ng-repeat="record in user.details.record">
+      <td>Date: {{record.time}}</td>
+      <td>Car: {{record.car}}</td>
+      <td>Mpg: {{record.mpg}}</td>
+      <td>Miles: {{record.miles}}</td>
+      <td>Gallons: {{record.gallons}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form ng-submit="submit()">
+  <div class="form-group">
+    <label for="miles">Miles</label>
+    <input type="text" class="text-input" ng-model="miles" required/>
+  </div>
+  <div class="form-group">
+    <label for="gallons">Gallons</label>
+    <input type="text" class="text-input" ng-model="gallons" required/>
+  </div>
+  <div class="form-group">
+    <button type="submit">Submit</button>
+  </div>
+</form>

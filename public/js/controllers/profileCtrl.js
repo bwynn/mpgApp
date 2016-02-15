@@ -8,8 +8,6 @@ angular.module('profileCtrl', [])
 
       // set user details
       $scope.user = user.data;
-
-      console.log($scope.user);
     });
 
   }]);

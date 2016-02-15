@@ -10,6 +10,8 @@ var Schema = mongoose.Schema;
 var RecordSchema = new Schema({
   time: {type: Date, default: Date.now},
   mpg: Number,
+  miles: Number,
+  gallons: Number,
   car: String
 });
 
