@@ -12,6 +12,9 @@ angular.module('UserService', [])
       },
       delete: function() {
         return $http.delete('/api/profile');
+      },
+      getCar: function(userCar) {
+        return {car: userCar}
       }
     };
   }]);
