@@ -9,10 +9,9 @@ angular.module('profileCtrl', [])
       $scope.user = user.data;
     });
 
-    $scope.submit = function() {
-      for (var i = 0; i < $scope.user.details.car.length; i++) {
-        User.getCar($scope.user.details.car[i].model);
-      }
+    $scope.submit = function(car) {
+      console.log(car); //
+      $scope.$emit('handleEmit', {model: car});
     };
 
   }]);

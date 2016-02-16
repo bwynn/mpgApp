@@ -1,8 +1,8 @@
 <table>
   <tbody>
-    <tr ng-repeat="record in user.details.record">
+    <tr ng-repeat="record in user.details.record | filter: car">
       <td>Date: {{record.time}}</td>
-      <td>Car: {{record.car}}</td>
+      <td>Car: {{car}}</td>
       <td>Mpg: {{record.mpg}}</td>
       <td>Miles: {{record.miles}}</td>
       <td>Gallons: {{record.gallons}}</td>

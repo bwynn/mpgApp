@@ -10,6 +10,6 @@
 </div>
 <div class="cars">
   <div ng-repeat="car in user.details.car">
-    <a href="/profile/{{car.model}}" ng-click="submit()"<span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span>
+    <a href="/profile/{{car.model}}" ng-click="submit(car.model)"<span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span>
   </div>
 </div>
