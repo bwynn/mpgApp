@@ -9,7 +9,28 @@
   </div>
 </div>
 <div class="cars">
+  <p><a href="#" ng-click="showCarForm()">Add a new car</a></p>
   <div ng-repeat="car in user.details.car">
-    <a href="/profile/{{car.model}}" ng-click="submit(car.model)"<span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span>
+    <a href="/profile/{{car.model}}" ng-click="setCar(car)"<span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span></a>
   </div>
+</div>
+
+<div class="modal add-car" ng-show="show_car_form">
+  <form ng-submit="addNewCar()">
+    <div class="form-group">
+      <label>Brand</label>
+      <input type="text" ng-model="add_brand" required>
+    </div>
+    <div class="form-group">
+      <label>Model</label>
+      <input type="text" ng-model="add_model" required>
+    </div>
+    <div class="form-group">
+      <label>Year</label>
+      <input type="text" ng-model="add_year" required>
+    </div>
+    <div class="form-group">
+      <button type="submit">Add Car!</button>
+    </div>
+  </form>
 </div>

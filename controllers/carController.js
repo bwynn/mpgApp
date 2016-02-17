@@ -13,6 +13,7 @@ exports.addCar = function(req, res) {
     car.model = req.body.model;
     car.brand = req.body.brand;
     car.year = req.body.year;
+    car.idx = req.body.idx;
     // save to instance of user
     User.update({'details.email': req.body.email}, {
       $push: {

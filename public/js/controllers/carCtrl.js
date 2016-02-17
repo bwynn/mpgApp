@@ -5,10 +5,11 @@ angular.module('carCtrl', [])
 
     // store values
     $scope.$watch(function() {
-      return $rootScope.model;
+      return $rootScope.car;
     }, function() {
-      console.log($rootScope.model);
-      $scope.car = $rootScope.model;
+      console.log($rootScope.car);
+      $scope.car = $rootScope.car.model;
+      //$scope._id = $rootScope.car._id;
     });
 
     function getData() {
@@ -16,6 +17,12 @@ angular.module('carCtrl', [])
       User.get().then(function(user) {
         $scope.user = user.data;
         console.log($scope.user);
+        if ($scope.user.details.record.idx) {
+          $scope.idx = $scope.user.details.record.length + 1;
+        }
+        else {
+          $scope.idx = $scope.user.details.record.idx;
+        }
       });
     }
 
@@ -35,13 +42,27 @@ angular.module('carCtrl', [])
           mpg : $scope.mpg,
           miles : $scope.miles, // get miles value defined above
           gallons : $scope.gallons, // get gal value from above
-          email: $scope.user.details.email
+          email: $scope.user.details.email,
+          idx: $scope.idx
         }).then(function() {
           getData();
           $scope.miles = '';
           $scope.gallons = '';
         });
       }
+    };
+
+    $scope.remove = function(data) {
+      console.log(data);
+      //console.log($scope.idx);
+      console.log($scope.idx);
+
+      Record.deleteRecord({
+        "details.email" : $scope.user.details.email,
+        "idx" : $scope.idx
+      }).then(function() {
+        getData();
+      });
     };
 
     getData();

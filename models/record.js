@@ -12,7 +12,8 @@ var RecordSchema = new Schema({
   mpg: Number,
   miles: Number,
   gallons: Number,
-  car: String
+  car: String,
+  idx: Number
 });
 
 module.exports = mongoose.model("Record", RecordSchema);
