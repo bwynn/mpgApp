@@ -1,3 +1,7 @@
+<div>
+  <h1>{{car}}</h1>
+</div>
+
 <form ng-submit="submit()">
   <div class="form-group">
     <label for="miles">Miles</label>
@@ -14,9 +18,8 @@
 
 <table>
   <tbody>
-    <tr ng-repeat="record in user.details.record | filter: car">
-      <td>Date: {{record.time}}</td>
-      <td>Car: {{car}}</td>
+    <tr ng-repeat="record in user.details.record | filter: car | orderBy: 'record.time': true">
+      <td>Date: {{record.time | date: 'short'}}</td>
       <td>Mpg: {{record.mpg}}</td>
       <td>Miles: {{record.miles}}</td>
       <td>Gallons: {{record.gallons}}</td>

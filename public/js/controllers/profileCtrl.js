@@ -2,7 +2,8 @@ angular.module('profileCtrl', [])
   .controller('ProfileController', ['$scope', 'User', 'Car', '$location', function($scope, User, Car, $location) {
 
     $scope.hello = "Welcome! You made it to the Profile controller !";
-    $scope.show_car_form = false;
+    $scope.show_car_form = false; // state form for ng-show add-car form
+    $scope.arr = [];
 
     function getData() {
       // Get user data
@@ -10,6 +11,20 @@ angular.module('profileCtrl', [])
         // set user details
         $scope.user = user.data;
         console.log($scope.user);
+
+        // get mpg records from records object
+        angular.forEach($scope.user.details.record, function(mpg, index) {
+          $scope.arr.push(mpg.mpg); // push it to the $scope.arr array
+        });
+
+      }).then(function() {
+          var avg = 0; // set mpg value to 0
+          var len = $scope.arr.length; // get length of records from array
+          for (var i = 0; i < len; i++) {
+            avg += $scope.arr[i]; // add value to avg value
+          }
+          var newAvg = avg/len;
+          $scope.mpg = newAvg.toFixed(2); // set $scope.mpg val
       });
     }
 

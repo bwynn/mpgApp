@@ -11,7 +11,8 @@
 <div class="cars">
   <p><a href="#" ng-click="showCarForm()">Add a new car</a></p>
   <div ng-repeat="car in user.details.car">
-    <a href="/profile/{{car.model}}" ng-click="setCar(car)"<span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span></a><button ng-click="removeCar(car._id)">Delete Car</button>
+    <a href="/profile/{{car.model.toLowerCase()}}" ng-click="setCar(car)"<span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span><span> / Average MPG: {{mpg}}</span></a>
+    <div><button ng-click="removeCar(car._id)">Delete Car</button></div>
   </div>
 </div>
 

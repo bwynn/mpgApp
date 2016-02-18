@@ -1,5 +1,5 @@
 angular.module('carCtrl', [])
-  .controller('CarController', ['$scope', 'User', 'Record', '$rootScope', function($scope, User, Record, $rootScope) {
+  .controller('CarController', ['$scope', 'User', 'Record', 'Car', '$rootScope', function($scope, User, Record, Car, $rootScope) {
 
     $scope.hello = "Welcome! You made it to the car controller !";
 
@@ -33,7 +33,7 @@ angular.module('carCtrl', [])
 
         Record.addRecord({
           car : $scope.car,
-          mpg : $scope.mpg,
+          mpg : $scope.mpg.toFixed(2),
           miles : $scope.miles, // get miles value defined above
           gallons : $scope.gallons, // get gal value from above
           email: $scope.user.local.email,
