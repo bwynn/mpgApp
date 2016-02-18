@@ -13,10 +13,10 @@ var Car = require('./car');
 var UserSchema = new Schema({
   local: {
     username: String,
-    password: String
+    password: String,
+    email: String
   },
   details: {
-    email: String,
     record: [Record.schema],
     car: [Car.schema]
   }

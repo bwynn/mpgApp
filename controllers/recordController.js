@@ -13,7 +13,7 @@ exports.updateRecord = function(req, res) {
     record.gallons = req.body.gallons; // set gallons
     record.miles = req.body.miles; // set miles
     record.idx = req.body.idx;
-    User.update({"details.email": req.body.email}, { // query the 'details.email' property based on user email
+    User.update({"local.email": req.body.email}, { // query the 'details.email' property based on user email
       $push: { // from there, push
         "details.record": record // object to the user details
       }
@@ -29,7 +29,7 @@ exports.updateRecord = function(req, res) {
 
 exports.deleteRecord = function(req, res) {
   User.findOne({'_id': req.session.passport.user}, function(err, user) {
-    User.update({'details.email': req.body.email}, {
+    User.update({'local.email': req.body.email}, {
       $pull: { 'details.car': {'_id': req.body.id} } // get data.id value on front end
     }, function(err) {
       if (err) {

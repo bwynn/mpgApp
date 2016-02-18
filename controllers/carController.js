@@ -13,9 +13,8 @@ exports.addCar = function(req, res) {
     car.model = req.body.model;
     car.brand = req.body.brand;
     car.year = req.body.year;
-    car.idx = req.body.idx;
     // save to instance of user
-    User.update({'details.email': req.body.email}, {
+    User.update({'local.email': req.body.email}, {
       $push: {
         "details.car": JSON.parse(JSON.stringify(car)) // push instance of car into user details
       }
@@ -31,7 +30,7 @@ exports.addCar = function(req, res) {
 
 exports.removeCar = function(req, res) {
   User.findOne({'_id': req.session.passport.user}, function(err, user) {
-    User.update({'details.email': req.body.email}, {
+    User.update({'local.email': req.body.email}, {
       $pull: { 'details.car': {'_id': req.body.id} }
     }, function(err, user) {
       if (err) {

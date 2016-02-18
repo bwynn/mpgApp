@@ -25,18 +25,18 @@ module.exports = function(passport) {
   // =============================================================================
 
   passport.use('local-signup', new LocalStrategy({
-    usernameField: 'username',
+    usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true // pass back the req to the callback
   },
-  function(req, username, password, done) {
+  function(req, email, password, done) {
 
     // asyc setup
     // User.findOne wont fire until data is sent back
     process.nextTick(function() {
 
       // find user by email
-      User.findOne({'local.username': username}, function(err, user) {
+      User.findOne({'local.email': email}, function(err, user) {
         if (err) {
           return done(err);
         }
@@ -50,7 +50,7 @@ module.exports = function(passport) {
           var newUser = new User();
 
           // set credentials
-          newUser.local.username = username;
+          newUser.local.email = email;
           newUser.local.password = newUser.generateHash(password);
 
           // save the user
@@ -69,13 +69,13 @@ module.exports = function(passport) {
 // log in
 // =============================================================================
   passport.use('local-login', new LocalStrategy({
-    usernameField: 'username',
+    usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true
   },
-  function(req, username, password, done) {
+  function(req, email, password, done) {
 
-    User.findOne({'local.username': username}, function(err, user) {
+    User.findOne({'local.email': email}, function(err, user) {
       if (err) {
         return done(err);
       }

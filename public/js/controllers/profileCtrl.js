@@ -9,6 +9,7 @@ angular.module('profileCtrl', [])
       User.get().then(function(user) {
         // set user details
         $scope.user = user.data;
+        console.log($scope.user);
       });
     }
 
@@ -27,7 +28,26 @@ angular.module('profileCtrl', [])
       Car.addCar({
         model: $scope.add_model,
         brand: $scope.add_brand,
-        year: $scope.add_year
+        year: $scope.add_year,
+        email: $scope.user.local.email
+      }).then(function() {
+        getData(); // update contents on page
+
+        $scope.showCarForm = true; // set state back to true
+
+        $scope.add_model = ''; // clear add_model
+        $scope.add_brand = ''; // clear add_brand
+        $scope.add_year = ''; // clear add_year
+      });
+    };
+
+    $scope.removeCar = function(car_id) {
+      console.log(car_id);
+      console.log($scope.user.local.email);
+
+      Car.removeCar({
+        email: $scope.user.local.email,
+        id: car_id
       }).then(function() {
         getData();
       });
@@ -39,5 +59,4 @@ angular.module('profileCtrl', [])
     };
 
     getData();
-
   }]);

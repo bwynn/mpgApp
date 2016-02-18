@@ -17,12 +17,6 @@ angular.module('carCtrl', [])
       User.get().then(function(user) {
         $scope.user = user.data;
         console.log($scope.user);
-        if ($scope.user.details.record.idx) {
-          $scope.idx = $scope.user.details.record.length + 1;
-        }
-        else {
-          $scope.idx = $scope.user.details.record.idx;
-        }
       });
     }
 
@@ -42,7 +36,7 @@ angular.module('carCtrl', [])
           mpg : $scope.mpg,
           miles : $scope.miles, // get miles value defined above
           gallons : $scope.gallons, // get gal value from above
-          email: $scope.user.details.email,
+          email: $scope.user.local.email,
           idx: $scope.idx
         }).then(function() {
           getData();
@@ -54,12 +48,11 @@ angular.module('carCtrl', [])
 
     $scope.remove = function(data) {
       console.log(data);
-      //console.log($scope.idx);
-      console.log($scope.idx);
+      console.log($scope.user.local.email)
 
       Record.deleteRecord({
-        "details.email" : $scope.user.details.email,
-        "idx" : $scope.idx
+        email : $scope.user.local.email,
+        id : data
       }).then(function() {
         getData();
       });

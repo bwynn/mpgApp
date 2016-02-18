@@ -27,7 +27,7 @@ exports.updateProfile = function(req, res) {
     // update username
     user.local.username = req.body.username;
     // update email
-    user.details.email = req.body.email;
+    user.local.email = req.body.email;
 
     user.save(function(err) {
       if (err) {

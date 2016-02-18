@@ -1,16 +1,3 @@
-<table>
-  <tbody>
-    <tr ng-repeat="record in user.details.record | filter: car">
-      <td>Date: {{record.time}}</td>
-      <td>Car: {{car}}</td>
-      <td>Mpg: {{record.mpg}}</td>
-      <td>Miles: {{record.miles}}</td>
-      <td>Gallons: {{record.gallons}}</td>
-      <td><button ng-click="remove(record.idx)">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
-
 <form ng-submit="submit()">
   <div class="form-group">
     <label for="miles">Miles</label>
@@ -24,3 +11,16 @@
     <button type="submit">Submit</button>
   </div>
 </form>
+
+<table>
+  <tbody>
+    <tr ng-repeat="record in user.details.record | filter: car">
+      <td>Date: {{record.time}}</td>
+      <td>Car: {{car}}</td>
+      <td>Mpg: {{record.mpg}}</td>
+      <td>Miles: {{record.miles}}</td>
+      <td>Gallons: {{record.gallons}}</td>
+      <td><button ng-click="remove(record._id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
