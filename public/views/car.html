@@ -1,5 +1,10 @@
 <div>
-  <h1>{{car}}</h1>
+  <h1>{{car.model}}</h1>
+  <ul>
+    <li><strong>Brand</strong>: {{car.brand}}</li>
+    <li><strong>Year</strong>: {{car.year}}</li>
+    <li><strong>Average MPG</strong>: {{avg}}</li>
+  </ul>
 </div>
 
 <form ng-submit="submit()">
@@ -18,7 +23,7 @@
 
 <table>
   <tbody>
-    <tr ng-repeat="record in user.details.record | filter: car | orderBy: 'record.time': true">
+    <tr ng-repeat="record in user.details.record | filter: car.model | orderBy: 'record.time': true">
       <td>Date: {{record.time | date: 'short'}}</td>
       <td>Mpg: {{record.mpg}}</td>
       <td>Miles: {{record.miles}}</td>

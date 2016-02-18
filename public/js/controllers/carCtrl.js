@@ -5,11 +5,12 @@ angular.module('carCtrl', [])
 
     // store values
     $scope.$watch(function() {
-      return $rootScope.car;
+      return $rootScope;
     }, function() {
-      console.log($rootScope.car);
-      $scope.car = $rootScope.car.model;
-      //$scope._id = $rootScope.car._id;
+      // console.log($rootScope.car);
+      // console.log($rootScope.avg);
+      $scope.car = $rootScope.car;
+      $scope.avg = $rootScope.avg;
     });
 
     function getData() {
@@ -24,24 +25,30 @@ angular.module('carCtrl', [])
     $scope.submit = function() {
       if ($scope.miles && $scope.gallons) {
         $scope.mpg = $scope.miles/$scope.gallons;
-
         console.log($scope.miles);
         console.log($scope.gallons);
         console.log($scope.mpg);
-        console.log($scope.car);
-        console.log($scope.user.details.email);
+        console.log($scope.car.model);
+        console.log($scope.user.local.email);
 
         Record.addRecord({
-          car : $scope.car,
+          car : $scope.car.model,
           mpg : $scope.mpg.toFixed(2),
           miles : $scope.miles, // get miles value defined above
           gallons : $scope.gallons, // get gal value from above
-          email: $scope.user.local.email,
-          idx: $scope.idx
+          email: $scope.user.local.email
         }).then(function() {
           getData();
           $scope.miles = '';
           $scope.gallons = '';
+        }).then(function() {
+          var newAvg = 0;
+          // update avg
+          newAvg += $scope.mpg;
+          console.log(newAvg);
+          newAvg += parseInt($scope.avg);
+          console.log(newAvg);
+          $scope.avg = (newAvg/2).toFixed(2);
         });
       }
     };
@@ -51,8 +58,8 @@ angular.module('carCtrl', [])
       console.log($scope.user.local.email)
 
       Record.deleteRecord({
-        email : $scope.user.local.email,
-        id : data
+        "email" : $scope.user.local.email,
+        "id" : data
       }).then(function() {
         getData();
       });

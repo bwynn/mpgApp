@@ -29,7 +29,7 @@ exports.updateRecord = function(req, res) {
 exports.deleteRecord = function(req, res) {
   User.findOne({'_id': req.session.passport.user}, function(err, user) {
     User.update({'local.email': req.body.email}, {
-      $pull: { 'details.car': {'_id': req.body.id} } // get data.id value on front end
+      $pull: { 'details.record': {'_id': req.body.id} } // get data.id value on front end
     }, function(err) {
       if (err) {
         res.send(err);

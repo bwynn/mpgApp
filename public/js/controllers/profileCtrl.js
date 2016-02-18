@@ -3,7 +3,7 @@ angular.module('profileCtrl', [])
 
     $scope.hello = "Welcome! You made it to the Profile controller !";
     $scope.show_car_form = false; // state form for ng-show add-car form
-    $scope.arr = [];
+    $scope.arr = []; // holds values for
 
     function getData() {
       // Get user data
@@ -18,20 +18,25 @@ angular.module('profileCtrl', [])
         });
 
       }).then(function() {
-          var avg = 0; // set mpg value to 0
-          var len = $scope.arr.length; // get length of records from array
-          for (var i = 0; i < len; i++) {
-            avg += $scope.arr[i]; // add value to avg value
-          }
-          var newAvg = avg/len;
-          $scope.mpg = newAvg.toFixed(2); // set $scope.mpg val
+          getAvg();
       });
     }
 
+    function getAvg() {
+      var avg = 0; // set mpg value to 0
+      var len = $scope.arr.length; // get length of records from array
+      for (var i = 0; i < len; i++) {
+        avg += $scope.arr[i]; // add value to avg value
+      }
+      var newAvg = avg/len;
+      $scope.mpg = newAvg.toFixed(2); // set $scope.mpg val
+    }
+
     // send link car model up to rootScope
-    $scope.setCar = function(car) {
-      console.log(car);
+    $scope.setCar = function(car, avg) {
+      //console.log(car);
       $scope.$emit('handleEmit', {car: car});
+      $scope.$emit('carAvgEmit', {avg: avg});
     };
 
     // add a new car to userProfile
