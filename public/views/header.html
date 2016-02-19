@@ -1,5 +1,17 @@
 <h1>MyMpg</h1>
-<ul>
-  <li><a href="/profile" class="fa fa-user"></a></li>
-  <li><a href="/logout">logout</a></li>
-</ul>
+<button class="fa fa-user menu-button" ng-click="menuBtn()"></button>
+<nav ng-show="!closed" class="nav desktop-nav">
+  <ul>
+    <li><a href="/profile">profile</a></li>
+    <li><a href="/profile">edit</a></li>
+    <li><a href="/logout">logout</a></li>
+  </ul>
+</nav>
+
+<nav class="nav mobile-nav">
+  <ul>
+    <li><a href="/profile">profile</a></li>
+    <li><a href="/profile">edit</a></li>
+    <li><a href="/logout">logout</a></li>
+  </ul>
+</nav>

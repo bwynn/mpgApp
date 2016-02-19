@@ -8,6 +8,7 @@ $dark-grey: #2A2E30;
 $mid-grey: #3E4447;
 $white: #EDEBE4;
 $side-margins: .5rem;
+$nav-height: 2.6em;
 
 // mixins
 @mixin flex {
@@ -61,27 +62,108 @@ p {
   @include strip;
 }
 
-// Global Header
+// GLOBAL HEADER
 .global-header {
   width: inherit;
-  height: 2.6em;
-  overflow: hidden;
-  @include flex;
+  height: $nav-height;
   background-color: $dark-grey;
-  h1 {
-    margin-left: $side-margins;
-  }
-  ul {
-    @include flex;
-    margin-left: auto;
-    color: $white;
-    li {
-      margin: 1em $side-margins;
+  position: absolute;
+  z-index: 1;
+  // nav elements, which float beneath header row
+  nav {
+    position: relative;
+    z-index: 3;
+    width: 300px;
+    float: right;
+    clear: both;
+    ul, a {
+      color: $white;
+    }
+    ul {
+      position: relative;
+      color: $white;
+      background-color: $dark-grey;
+      li {
+        padding: .5em 0;
+        margin: 0 $side-margins;
+        border-bottom: 2px solid #555;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+    &.desktop-nav {
+      height: 50px;
+    }
+    &.mobile-nav {
+      display: none;
     }
   }
-  ul, h1, a {
+  h1 {
+    margin-left: $side-margins;
     color: $white;
+    display: inline-block;
+  }
+  .menu-button {
+    float: right;
+    width: 2em;
+    height: $full;
   }
 }
 
-@import url('/_forms');
+// SECTION / VIEWS =============================================================
+.container {
+  position: relative;
+  top: 2.6em;
+
+}
+
+// PROFILE
+.profile {
+  .profile-content {
+
+  }
+}
+
+// CARS
+.cars {
+  .delete-button {
+    display: inline-block;
+  }
+}
+
+// FORMS =======================================================================
+.form {
+  width: $full * 0.9;
+  margin: auto;
+  max-width: $full * 0.6;
+  .form-group {
+    margin: 1em;
+    label {
+      display: inline-block;
+      padding: .2em 0 .2em .5em;
+      width: 25%;
+      text-align: right;
+    }
+    .text-input {
+      font-size: 1.2em;
+      padding: .1em;
+      width: 50%;
+    }
+    .btn {
+      width: 50%;
+      margin: 0 auto;
+      display: block;
+      font-size: 1.2em;
+    }
+    .submit-btn {
+
+    }
+    .btn-link {
+
+    }
+  }
+}

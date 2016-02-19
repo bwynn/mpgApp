@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen:400,700);
-@import url("/_forms");
 html, body {
   width: 100%;
   margin: 0; }
@@ -41,20 +40,68 @@ p {
 .global-header {
   width: inherit;
   height: 2.6em;
-  overflow: hidden;
-  -webkit-display: flexbox;
-  display: flex;
-  background-color: #2A2E30; }
+  background-color: #2A2E30;
+  position: absolute;
+  z-index: 1; }
+  .global-header nav {
+    position: relative;
+    z-index: 3;
+    width: 300px;
+    float: right;
+    clear: both; }
+    .global-header nav ul, .global-header nav a {
+      color: #EDEBE4; }
+    .global-header nav ul {
+      position: relative;
+      color: #EDEBE4;
+      background-color: #2A2E30; }
+      .global-header nav ul li {
+        padding: .5em 0;
+        margin: 0 0.5rem;
+        border-bottom: 2px solid #555; }
+        .global-header nav ul li:first-child {
+          margin-top: 0; }
+        .global-header nav ul li:last-child {
+          border-bottom: none; }
+    .global-header nav.desktop-nav {
+      height: 50px; }
+    .global-header nav.mobile-nav {
+      display: none; }
   .global-header h1 {
-    margin-left: 0.5rem; }
-  .global-header ul {
-    -webkit-display: flexbox;
-    display: flex;
-    margin-left: auto;
-    color: #EDEBE4; }
-    .global-header ul li {
-      margin: 1em 0.5rem; }
-  .global-header ul, .global-header h1, .global-header a {
-    color: #EDEBE4; }
+    margin-left: 0.5rem;
+    color: #EDEBE4;
+    display: inline-block; }
+  .global-header .menu-button {
+    float: right;
+    width: 2em;
+    height: 100%; }
+
+.container {
+  position: relative;
+  top: 2.6em; }
+
+.cars .delete-button {
+  display: inline-block; }
+
+.form {
+  width: 90%;
+  margin: auto;
+  max-width: 60%; }
+  .form .form-group {
+    margin: 1em; }
+    .form .form-group label {
+      display: inline-block;
+      padding: .2em 0 .2em .5em;
+      width: 25%;
+      text-align: right; }
+    .form .form-group .text-input {
+      font-size: 1.2em;
+      padding: .1em;
+      width: 50%; }
+    .form .form-group .btn {
+      width: 50%;
+      margin: 0 auto;
+      display: block;
+      font-size: 1.2em; }
 
 /*# sourceMappingURL=main.css.map */

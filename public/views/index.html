@@ -1,9 +1,9 @@
 <!doctype html>
 <html ng-app="mpgApp">
   <head>
+    <title>MyMpg</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyMpg</title>
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/main.css">
   </head>
@@ -11,7 +11,7 @@
 
     <header class="global-header" ng-include="'views/header.html'"></header>
 
-    <section ng-view></section>
+    <section class="container" ng-view></section>
 
     <footer class="global-footer" ng-include="'views/footer.html'"></footer>
 
