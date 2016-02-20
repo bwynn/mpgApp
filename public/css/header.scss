@@ -1,0 +1,46 @@
+// GLOBAL HEADER
+.global-header {
+  width: inherit;
+  height: $nav-height;
+  background-color: $dark-grey;
+  position: absolute;
+  z-index: 1;
+  // nav elements, which float beneath header row
+  nav {
+    position: relative;
+    z-index: 3;
+    width: 300px;
+    float: right;
+    clear: both;
+    ul, a {
+      color: $white;
+    }
+    ul {
+      position: relative;
+      color: $white;
+      background-color: $dark-grey;
+      li {
+        padding: .5em 0;
+        margin: 0 $side-margins;
+        border-bottom: 2px solid #555;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+    &.desktop-nav {
+      height: 50px;
+    }
+    &.mobile-nav {
+      display: none;
+    }
+  }
+  h1 {
+    margin-left: $side-margins;
+    color: $white;
+    display: inline-block;
+  }
+}

@@ -37,6 +37,37 @@ p {
   margin: 0;
   padding: 0; }
 
+.login-link {
+  height: 2em; }
+
+.btn {
+  height: 2em;
+  margin: 0 auto;
+  font-size: 1.2em;
+  padding: .2em .5em;
+  background-color: #EDEBE4;
+  border-radius: 3px;
+  border: 2px solid #A43233;
+  color: #A43233;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out; }
+  .btn:focus {
+    outline: none; }
+  .btn:hover {
+    cursor: pointer;
+    background-color: #C23A3B;
+    color: #EDEBE4; }
+  .btn.menu-button {
+    float: right;
+    width: 2em;
+    height: 100%; }
+  .btn.submit-btn {
+    width: 50%;
+    display: block;
+    margin: 0 auto; }
+  .btn.btn-link {
+    margin: 0 auto; }
+
 .global-header {
   width: inherit;
   height: 2.6em;
@@ -71,17 +102,6 @@ p {
     margin-left: 0.5rem;
     color: #EDEBE4;
     display: inline-block; }
-  .global-header .menu-button {
-    float: right;
-    width: 2em;
-    height: 100%; }
-
-.container {
-  position: relative;
-  top: 2.6em; }
-
-.cars .delete-button {
-  display: inline-block; }
 
 .form {
   width: 90%;
@@ -92,16 +112,18 @@ p {
     .form .form-group label {
       display: inline-block;
       padding: .2em 0 .2em .5em;
-      width: 25%;
+      width: 22.5%;
       text-align: right; }
     .form .form-group .text-input {
       font-size: 1.2em;
       padding: .1em;
       width: 50%; }
-    .form .form-group .btn {
-      width: 50%;
-      margin: 0 auto;
-      display: block;
-      font-size: 1.2em; }
+
+.container {
+  position: relative;
+  top: 2.6em; }
+
+.cars .delete-button {
+  display: inline-block; }
 
 /*# sourceMappingURL=main.css.map */

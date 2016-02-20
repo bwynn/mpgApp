@@ -1,0 +1,33 @@
+.btn {
+  height: 2em;
+  margin: 0 auto;
+  font-size: 1.2em;
+  padding: .2em .5em;
+  background-color: $white;
+  border-radius: 3px;
+  border: 2px solid $dark-red;
+  color: $dark-red;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $red;
+    color: $white;
+  }
+  &.menu-button {
+    float: right;
+    width: 2em;
+    height: $full;
+  }
+  &.submit-btn {
+    width: $half;
+    display: block;
+    margin: $center;
+  }
+  &.btn-link {
+    margin: $center;
+  }
+}

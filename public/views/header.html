@@ -1,8 +1,8 @@
 <h1>MyMpg</h1>
-<button class="fa fa-user menu-button" ng-click="menuBtn()"></button>
+<button class="fa fa-user btn menu-button" ng-click="menuBtn()"></button>
 <nav ng-show="!closed" class="nav desktop-nav">
   <ul>
-    <li><a href="/profile">profile</a></li>
+    <li><a href="/profile" ng-click="menuBtn()">profile</a></li>
     <li><a href="/profile">edit</a></li>
     <li><a href="/logout">logout</a></li>
   </ul>
