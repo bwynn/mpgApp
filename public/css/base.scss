@@ -3,7 +3,7 @@ $full: 100%;
 $half: 50%;
 $font: 20px;
 $dark-grey: #2A2E30;
-$mid-grey: #3E4447;
+$grey: #3E4447;
 $white: #EDEBE4;
 $dark-red: #A43233;
 $red: #C23A3B;
@@ -25,6 +25,7 @@ $center: 0 auto;
 // Global Elements, formatting
 html, body {
   width: $full;
+  height: $full;
   margin: 0;
 }
 
@@ -66,4 +67,21 @@ p {
 // login links
 .login-link {
   height: 2em;
+}
+
+.container {
+  height: $full;
+  position: relative;
+  top: 2.6em;
+}
+
+// modal windows
+.modal {
+  position: absolute;
+  top: 0;
+  height: $full;
+  width: $full;
+  z-index: 10;
+  background-color: $grey;
+  opacity: .8;
 }

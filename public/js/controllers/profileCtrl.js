@@ -2,7 +2,6 @@ angular.module('profileCtrl', [])
   .controller('ProfileController', ['$scope', 'User', 'Car', '$location', function($scope, User, Car, $location) {
 
     $scope.hello = "Welcome! You made it to the Profile controller !";
-    $scope.show_car_form = false; // state form for ng-show add-car form
     $scope.arr = []; // holds values for
 
     function getData() {
@@ -11,6 +10,8 @@ angular.module('profileCtrl', [])
         // set user details
         $scope.user = user.data;
         console.log($scope.user);
+
+        $scope.show_car_form = false; // state form for ng-show add-car form
 
         // get mpg records from records object
         angular.forEach($scope.user.details.record, function(mpg, index) {
@@ -53,8 +54,6 @@ angular.module('profileCtrl', [])
       }).then(function() {
         getData(); // update contents on page
 
-        $scope.showCarForm = true; // set state back to true
-
         $scope.add_model = ''; // clear add_model
         $scope.add_brand = ''; // clear add_brand
         $scope.add_year = ''; // clear add_year
@@ -75,7 +74,15 @@ angular.module('profileCtrl', [])
 
     // show the add car form
     $scope.showCarForm = function() {
-      $scope.show_car_form = true;
+      if (!$scope.show_car_form) {
+        $scope.show_car_form = true;
+      }
+      else if ($scope.show_car_form) {
+        $scope.show_car_form = false;
+      }
+      else {
+        $log.log("Something wrong with show car form switcher");
+      }
     };
 
     getData();

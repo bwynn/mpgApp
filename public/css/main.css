@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen:400,700);
 html, body {
   width: 100%;
+  height: 100%;
   margin: 0; }
 
 body {
@@ -39,6 +40,20 @@ p {
 
 .login-link {
   height: 2em; }
+
+.container {
+  height: 100%;
+  position: relative;
+  top: 2.6em; }
+
+.modal {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: #3E4447;
+  opacity: .8; }
 
 .btn {
   height: 2em;
@@ -118,10 +133,6 @@ p {
       font-size: 1.2em;
       padding: .1em;
       width: 50%; }
-
-.container {
-  position: relative;
-  top: 2.6em; }
 
 .cars .delete-button {
   display: inline-block; }

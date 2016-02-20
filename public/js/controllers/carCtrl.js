@@ -25,11 +25,11 @@ angular.module('carCtrl', [])
     $scope.submit = function() {
       if ($scope.miles && $scope.gallons) {
         $scope.mpg = $scope.miles/$scope.gallons;
-        console.log($scope.miles);
-        console.log($scope.gallons);
-        console.log($scope.mpg);
-        console.log($scope.car.model);
-        console.log($scope.user.local.email);
+        //console.log($scope.miles);
+        //console.log($scope.gallons);
+        //console.log($scope.mpg);
+        //console.log($scope.car.model);
+        //console.log($scope.user.local.email);
 
         Record.addRecord({
           car : $scope.car.model,
@@ -54,8 +54,8 @@ angular.module('carCtrl', [])
     };
 
     $scope.remove = function(data) {
-      console.log(data);
-      console.log($scope.user.local.email)
+      //console.log(data);
+      //console.log($scope.user.local.email)
 
       Record.deleteRecord({
         "email" : $scope.user.local.email,
