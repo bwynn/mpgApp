@@ -1,14 +1,13 @@
 .btn {
   height: 2em;
-  margin: 0 auto;
+  margin: .5em auto;
   font-size: 1.2em;
   padding: .2em .5em;
   background-color: $white;
   border-radius: 3px;
   border: 2px solid $dark-red;
   color: $dark-red;
-  -webkit-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
+  @include btnTransition;
   &:focus {
     outline: none;
   }
@@ -21,6 +20,7 @@
     float: right;
     width: 2em;
     height: $full;
+    margin: 0;
   }
   &.submit-btn {
     width: $half;

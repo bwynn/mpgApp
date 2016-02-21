@@ -38,26 +38,52 @@ p {
   margin: 0;
   padding: 0; }
 
+a {
+  color: #2A2E30;
+  text-decoration: none;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out; }
+  a:hover {
+    text-decoration: underline; }
+
 .login-link {
   height: 2em; }
 
 .container {
   height: 100%;
   position: relative;
-  top: 2.6em; }
+  top: 2.6em;
+  width: 100%; }
+  .container .inner-wrapper {
+    max-width: 700px;
+    margin: 0 auto; }
 
 .modal {
   position: absolute;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   z-index: 10;
   background-color: #3E4447;
   opacity: .8; }
+  .modal .modal-inner {
+    background: #2A2E30;
+    color: #EDEBE4;
+    opacity: none;
+    position: relative;
+    z-index: 12;
+    height: 100%; }
+    .modal .modal-inner .close-modal {
+      height: 3em; }
+      .modal .modal-inner .close-modal span.btn {
+        float: right;
+        height: 1em;
+        margin: .5em; }
 
 .btn {
   height: 2em;
-  margin: 0 auto;
+  margin: .5em auto;
   font-size: 1.2em;
   padding: .2em .5em;
   background-color: #EDEBE4;
@@ -75,7 +101,8 @@ p {
   .btn.menu-button {
     float: right;
     width: 2em;
-    height: 100%; }
+    height: 100%;
+    margin: 0; }
   .btn.submit-btn {
     width: 50%;
     display: block;
@@ -110,7 +137,9 @@ p {
         .global-header nav ul li:last-child {
           border-bottom: none; }
     .global-header nav.desktop-nav {
-      height: 50px; }
+      height: 50px;
+      position: relative;
+      z-index: 15; }
     .global-header nav.mobile-nav {
       display: none; }
   .global-header h1 {
@@ -120,8 +149,7 @@ p {
 
 .form {
   width: 90%;
-  margin: auto;
-  max-width: 60%; }
+  margin: auto; }
   .form .form-group {
     margin: 1em; }
     .form .form-group label {

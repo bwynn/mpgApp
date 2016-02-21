@@ -33,6 +33,8 @@
     }
     &.desktop-nav {
       height: 50px;
+      position: relative;
+      z-index: 15;
     }
     &.mobile-nav {
       display: none;

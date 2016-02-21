@@ -1,34 +1,36 @@
-<div>
-  <h1>{{car.model}}</h1>
-  <ul>
-    <li><strong>Brand</strong>: {{car.brand}}</li>
-    <li><strong>Year</strong>: {{car.year}}</li>
-    <li><strong>Average MPG</strong>: {{avg}}</li>
-  </ul>
+<div class="inner-wrapper">
+  <div>
+    <h1>{{car.model}}</h1>
+    <ul>
+      <li><strong>Brand</strong>: {{car.brand}}</li>
+      <li><strong>Year</strong>: {{car.year}}</li>
+      <li><strong>Average MPG</strong>: {{avg}}</li>
+    </ul>
+  </div>
+
+  <form ng-submit="submit()" class="form">
+    <div class="form-group">
+      <label for="miles">Miles</label>
+      <input type="text" class="text-input" ng-model="miles" required/>
+    </div>
+    <div class="form-group">
+      <label for="gallons">Gallons</label>
+      <input type="text" class="text-input" ng-model="gallons" required/>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn submit-btn">Submit</button>
+    </div>
+  </form>
+
+  <table>
+    <tbody>
+      <tr ng-repeat="record in user.details.record | filter: car.model | orderBy: 'record.time': true">
+        <td>Date: {{record.time | date: 'short'}}</td>
+        <td>Mpg: {{record.mpg}}</td>
+        <td>Miles: {{record.miles}}</td>
+        <td>Gallons: {{record.gallons}}</td>
+        <td><button ng-click="remove(record._id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-<form ng-submit="submit()">
-  <div class="form-group">
-    <label for="miles">Miles</label>
-    <input type="text" class="text-input" ng-model="miles" required/>
-  </div>
-  <div class="form-group">
-    <label for="gallons">Gallons</label>
-    <input type="text" class="text-input" ng-model="gallons" required/>
-  </div>
-  <div class="form-group">
-    <button type="submit">Submit</button>
-  </div>
-</form>
-
-<table>
-  <tbody>
-    <tr ng-repeat="record in user.details.record | filter: car.model | orderBy: 'record.time': true">
-      <td>Date: {{record.time | date: 'short'}}</td>
-      <td>Mpg: {{record.mpg}}</td>
-      <td>Miles: {{record.miles}}</td>
-      <td>Gallons: {{record.gallons}}</td>
-      <td><button ng-click="remove(record._id)">Delete</button></td>
-    </tr>
-  </tbody>
-</table>

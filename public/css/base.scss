@@ -22,6 +22,11 @@ $center: 0 auto;
     padding: 0;
 }
 
+@mixin btnTransition {
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+
 // Global Elements, formatting
 html, body {
   width: $full;
@@ -64,24 +69,56 @@ p {
   @include strip;
 }
 
+a {
+  color: $dark-grey;
+  text-decoration: none;
+  @include btnTransition;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 // login links
 .login-link {
   height: 2em;
 }
 
+// main container - all views are displayed within this containing element
 .container {
   height: $full;
   position: relative;
   top: 2.6em;
+  width: $full;
+  .inner-wrapper {
+    max-width: 700px;
+    margin: $center;
+  }
 }
 
 // modal windows
 .modal {
   position: absolute;
   top: 0;
+  left: 0;
   height: $full;
   width: $full;
   z-index: 10;
   background-color: $grey;
   opacity: .8;
+  .modal-inner {
+    background: $dark-grey;
+    color: $white;
+    opacity: none;
+    position: relative;
+    z-index: 12;
+    height: $full;
+    .close-modal {
+      height: 3em;
+      span.btn {
+        float: right;
+        height: 1em;
+        margin: .5em;
+      }
+    }
+  }
 }
