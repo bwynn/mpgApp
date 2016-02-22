@@ -10,7 +10,7 @@ angular.module('carCtrl', [])
       // console.log($rootScope.car);
       // console.log($rootScope.avg);
       $scope.car = $rootScope.car;
-      $scope.avg = $rootScope.avg;
+      //$scope.avg = $rootScope.avg;
     });
 
     function getData() {
@@ -25,11 +25,15 @@ angular.module('carCtrl', [])
     $scope.submit = function() {
       if ($scope.miles && $scope.gallons) {
         $scope.mpg = $scope.miles/$scope.gallons;
-        //console.log($scope.miles);
-        //console.log($scope.gallons);
-        //console.log($scope.mpg);
-        //console.log($scope.car.model);
-        //console.log($scope.user.local.email);
+        $scope.avg; // set var
+        var newAvg = 0; // set new total to 0
+        // update avg
+        newAvg += $scope.mpg; // add mpg value
+        console.log(newAvg);
+        newAvg += parseInt($scope.avg); // ensure avg is turned into a number and add to value
+        console.log(newAvg);
+        $scope.avg = (newAvg/2).toFixed(2); // set $scope.avg new value / 2
+
 
         Record.addRecord({
           car : $scope.car.model,
@@ -41,14 +45,6 @@ angular.module('carCtrl', [])
           getData();
           $scope.miles = '';
           $scope.gallons = '';
-        }).then(function() {
-          var newAvg = 0;
-          // update avg
-          newAvg += $scope.mpg;
-          console.log(newAvg);
-          newAvg += parseInt($scope.avg);
-          console.log(newAvg);
-          $scope.avg = (newAvg/2).toFixed(2);
         });
       }
     };

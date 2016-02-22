@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var User = require('../models/user');
 var Record = require('../models/record');
+var Car = require('../models/car');
 
 exports.updateRecord = function(req, res) {
   User.findOne({'_id': req.session.passport.user}, function(err, user) {
@@ -23,6 +24,17 @@ exports.updateRecord = function(req, res) {
       // notify update results
       res.json(user);
     });
+
+    // update car
+    /*Car.update({"details.car.model": req.body.car}, {
+      $push: {"details.car.model.avg_mpg": req.body.avg}
+    }, function(err, car) {
+      if (err) {
+        res.send(err);
+      }
+
+      res.json({message: "User sucessfully updated", content: car});
+    });*/
   });
 };
 
