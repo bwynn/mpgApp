@@ -15,9 +15,10 @@ angular.module('profileCtrl', [])
 
         // get mpg records from records object
         angular.forEach($scope.user.details.record, function(mpg, index) {
-          $scope.arr.push(mpg.mpg); // push it to the $scope.arr array
+          $scope.arr.push({mpg: mpg.mpg, model: mpg.car}); // push it to the $scope.arr array
         });
 
+        console.log($scope.arr);
       }).then(function() {
           getAvg();
       });
@@ -27,7 +28,7 @@ angular.module('profileCtrl', [])
       var avg = 0; // set mpg value to 0
       var len = $scope.arr.length; // get length of records from array
       for (var i = 0; i < len; i++) {
-        avg += $scope.arr[i]; // add value to avg value
+        avg += $scope.arr[i].mpg; // add value to avg value
       }
       var newAvg = avg/len;
       $scope.mpg = newAvg.toFixed(2); // set $scope.mpg val

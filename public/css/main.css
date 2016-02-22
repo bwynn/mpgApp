@@ -162,6 +162,12 @@ a {
       padding: .1em;
       width: 50%; }
 
+.profile .profile-content {
+  background: #3E4447; }
+  .profile .profile-content h4 {
+    padding: 1em 0.5em 0.5em;
+    color: #EDEBE4; }
+
 .cars .delete-button {
   display: inline-block; }
 

@@ -7,8 +7,6 @@ angular.module('carCtrl', [])
     $scope.$watch(function() {
       return $rootScope;
     }, function() {
-      // console.log($rootScope.car);
-      // console.log($rootScope.avg);
       $scope.car = $rootScope.car;
       //$scope.avg = $rootScope.avg;
     });

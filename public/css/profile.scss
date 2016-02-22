@@ -3,7 +3,11 @@
 // PROFILE
 .profile {
   .profile-content {
-
+    background: $grey;
+    h4 {
+      padding: $content-margins;
+      color: $white;
+    }
   }
 }
 
