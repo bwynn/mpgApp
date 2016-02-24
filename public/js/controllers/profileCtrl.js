@@ -2,7 +2,8 @@ angular.module('profileCtrl', [])
   .controller('ProfileController', ['$scope', 'User', 'Car', '$location', function($scope, User, Car, $location) {
 
     $scope.hello = "Welcome! You made it to the Profile controller !";
-    $scope.arr = []; // holds values for
+    $scope.arr = []; // holds values for determining average
+    $scope.miles = []; // store new object values
 
     function getData() {
       // Get user data
@@ -13,7 +14,7 @@ angular.module('profileCtrl', [])
 
         $scope.show_car_form = false; // state form for ng-show add-car form
 
-        // get mpg records from records object
+        // get mpg records from records object in db
         angular.forEach($scope.user.details.record, function(mpg, index) {
           $scope.arr.push({mpg: mpg.mpg, model: mpg.car}); // push it to the $scope.arr array
         });
@@ -21,17 +22,43 @@ angular.module('profileCtrl', [])
         console.log($scope.arr);
       }).then(function() {
           getAvg();
+          console.log($scope.miles);
+          console.log($scope.miles[0].avg);
       });
     }
 
     function getAvg() {
-      var avg = 0; // set mpg value to 0
-      var len = $scope.arr.length; // get length of records from array
-      for (var i = 0; i < len; i++) {
-        avg += $scope.arr[i].mpg; // add value to avg value
+      //console.log($scope.user.details.car);
+      // get car model names
+
+      // data prep
+      // iterate over car items
+      for (var i = 0; i < $scope.user.details.car.length; i++) {
+        // create new object with model name, miles
+        var obj = {
+          name: $scope.user.details.car[i].model,
+          mpg: [], // need to pass this into an array to get the length
+          total: 0,
+          avg: 0
+        };
+        // iterate through the $scope.arr items
+        for (j = 0; j < $scope.arr.length; j++) {
+          if (obj.name == $scope.arr[j].model) {
+            obj.mpg.push($scope.arr[j].mpg); // push item into local object array
+          }
+        }
+
+        // iterate over the obj.miles array to set the obj.total value
+        for (var k = 0; k < obj.mpg.length; k++) {
+          obj.total += obj.mpg[i];
+        }
+
+        // set avg value, total / length
+        obj.avg = obj.total / obj.mpg.length;
+
+        $scope.miles.push(obj); // push object to array
+        $scope.user.details.car[i].avg = obj.avg;
       }
-      var newAvg = avg/len;
-      $scope.mpg = newAvg.toFixed(2); // set $scope.mpg val
     }
 
     // send link car model up to rootScope

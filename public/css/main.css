@@ -2,6 +2,8 @@
 html, body {
   width: 100%;
   height: 100%;
+  max-height: 100%;
+  overflow: hidden;
   margin: 0; }
 
 body {
@@ -45,6 +47,11 @@ a {
   transition: .3s all ease-in-out; }
   a:hover {
     text-decoration: underline; }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none; }
 
 .login-link {
   height: 2em; }
@@ -103,12 +110,12 @@ a {
     width: 2em;
     height: 100%;
     margin: 0; }
-  .btn.submit-btn {
+  .btn.submit-btn, .btn.btn-link {
     width: 50%;
     display: block;
     margin: 0 auto; }
   .btn.btn-link {
-    margin: 0 auto; }
+    text-align: center; }
 
 .global-header {
   width: inherit;

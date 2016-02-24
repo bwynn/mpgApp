@@ -32,6 +32,8 @@ $center: 0 auto;
 html, body {
   width: $full;
   height: $full;
+  max-height: $full;
+  overflow: hidden;
   margin: 0;
 }
 
@@ -78,6 +80,15 @@ a {
     text-decoration: underline;
   }
 }
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  &:focus {
+    outline: none;
+  }
+}
+
 
 // login links
 .login-link {

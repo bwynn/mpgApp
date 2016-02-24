@@ -22,12 +22,13 @@
     height: $full;
     margin: 0;
   }
-  &.submit-btn {
+  &.submit-btn,
+  &.btn-link {
     width: $half;
     display: block;
     margin: $center;
   }
   &.btn-link {
-    margin: $center;
+    text-align: center;
   }
 }
