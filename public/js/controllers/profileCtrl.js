@@ -3,7 +3,6 @@ angular.module('profileCtrl', [])
 
     $scope.hello = "Welcome! You made it to the Profile controller !";
     $scope.arr = []; // holds values for determining average
-    $scope.miles = []; // store new object values
 
     function getData() {
       // Get user data
@@ -14,16 +13,20 @@ angular.module('profileCtrl', [])
 
         $scope.show_car_form = false; // state form for ng-show add-car form
 
-        // get mpg records from records object in db
-        angular.forEach($scope.user.details.record, function(mpg, index) {
-          $scope.arr.push({mpg: mpg.mpg, model: mpg.car}); // push it to the $scope.arr array
-        });
+        if ($scope.arr.length <= 0) {
+          // get mpg records from records object in db
+          angular.forEach($scope.user.details.record, function(mpg, index) {
+            $scope.arr.push({mpg: mpg.mpg, model: mpg.car}); // push it to the $scope.arr array
+          });
+        }
+
+        $scope.miles = []; // store new object values
 
         console.log($scope.arr);
       }).then(function() {
           getAvg();
           console.log($scope.miles);
-          console.log($scope.miles[0].avg);
+          $scope.setCar();
       });
     }
 
