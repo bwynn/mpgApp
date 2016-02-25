@@ -3,14 +3,14 @@ html, body {
   width: 100%;
   height: 100%;
   max-height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
   margin: 0; }
 
 body {
   font-family: 'Oxygen', helvetica, sans-serif;
   font-size: 20px;
-  background-color: #EDEBE4; }
+  background-color: #2A2E30;
+  color: #EDEBE4; }
 
 h1 {
   font-size: 40px;
@@ -39,7 +39,8 @@ ul {
 
 p {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  line-height: 1.5; }
 
 a {
   color: #2A2E30;
@@ -62,9 +63,13 @@ input[type="password"]:focus {
   position: relative;
   top: 2.6em;
   width: 100%; }
+  .container .outer-wrapper {
+    width: 100%; }
   .container .inner-wrapper {
     max-width: 700px;
     margin: 0 auto; }
+  .container .content {
+    padding: 1em .5em; }
 
 .modal {
   position: absolute;
@@ -73,15 +78,15 @@ input[type="password"]:focus {
   height: 100%;
   width: 100%;
   z-index: 10;
-  background-color: #3E4447;
-  opacity: .8; }
+  background-color: rgba(42, 46, 48, 0.8); }
   .modal .modal-inner {
-    background: #2A2E30;
-    color: #EDEBE4;
+    background: #EDEBE4;
+    color: #2A2E30;
     opacity: none;
     position: relative;
     z-index: 12;
-    height: 100%; }
+    height: 100%;
+    box-shadow: 1px 1px 20px 0px #000; }
     .modal .modal-inner .close-modal {
       height: 3em; }
       .modal .modal-inner .close-modal span.btn {
@@ -97,7 +102,7 @@ input[type="password"]:focus {
   background-color: #EDEBE4;
   border-radius: 3px;
   border: 2px solid #A43233;
-  color: #A43233;
+  color: #C23A3B;
   -webkit-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out; }
   .btn:focus {
@@ -110,7 +115,9 @@ input[type="password"]:focus {
     float: right;
     width: 2em;
     height: 100%;
-    margin: 0; }
+    margin: 0;
+    background-color: #3E4447;
+    border: none; }
   .btn.submit-btn, .btn.btn-link {
     width: 50%;
     display: block;
@@ -121,12 +128,13 @@ input[type="password"]:focus {
 .global-header {
   width: inherit;
   height: 2.6em;
-  background-color: #2A2E30;
+  background-color: #3E4447;
   position: absolute;
-  z-index: 1; }
+  z-index: 20;
+  border-bottom: 1px solid #EDEBE4; }
   .global-header nav {
     position: relative;
-    z-index: 3;
+    z-index: 21;
     width: 300px;
     float: right;
     clear: both; }
@@ -135,7 +143,9 @@ input[type="password"]:focus {
     .global-header nav ul {
       position: relative;
       color: #EDEBE4;
-      background-color: #2A2E30; }
+      background-color: #3E4447;
+      border-left: 1px solid #EDEBE4;
+      border-bottom: 1px solid #EDEBE4; }
       .global-header nav ul li {
         padding: .5em 0;
         margin: 0 0.5rem;
@@ -170,13 +180,22 @@ input[type="password"]:focus {
       padding: .1em;
       width: 50%; }
 
+.car-view table {
+  padding: 1em;
+  background-color: #3E4447; }
+
 .profile {
-  background: #3E4447;
+  background: #2A2E30;
   padding: 1em; }
   .profile .profile-content h4 {
     padding: 1em 0.5em 0.5em;
     color: #EDEBE4; }
 
+.cars .inner-wrapper {
+  background: #3E4447;
+  padding: 1em; }
+.cars .car-link {
+  color: #EDEBE4; }
 .cars .delete-button {
   display: inline-block; }
 

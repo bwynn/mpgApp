@@ -6,7 +6,7 @@
   background-color: $white;
   border-radius: 3px;
   border: 2px solid $dark-red;
-  color: $dark-red;
+  color: $red;
   @include btnTransition;
   &:focus {
     outline: none;
@@ -21,6 +21,8 @@
     width: 2em;
     height: $full;
     margin: 0;
+    background-color: $grey;
+    border: none;
   }
   &.submit-btn,
   &.btn-link {

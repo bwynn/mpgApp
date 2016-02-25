@@ -2,7 +2,7 @@
 
 // PROFILE
 .profile {
-  background: $grey;
+  background: $dark-grey;
   padding: 1em;
   .profile-content {
     h4 {
@@ -14,6 +14,13 @@
 
 // CARS
 .cars {
+  .inner-wrapper {
+    background: $grey;
+    padding: 1em;
+  }
+  .car-link {
+    color: $white;
+  }
   .delete-button {
     display: inline-block;
   }

@@ -33,15 +33,15 @@ html, body {
   width: $full;
   height: $full;
   max-height: $full;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
   margin: 0;
 }
 
 body {
   font-family: 'Oxygen', helvetica, sans-serif;
   font-size: $font;
-  background-color: $white;
+  background-color: $dark-grey;
+  color: $white;
 }
 
 h1 {
@@ -71,6 +71,7 @@ ul {
 
 p {
   @include strip;
+  line-height: 1.5;
 }
 
 a {
@@ -102,9 +103,15 @@ input[type="password"] {
   position: relative;
   top: 2.6em;
   width: $full;
+  .outer-wrapper {
+    width: $full;
+  }
   .inner-wrapper {
     max-width: 700px;
     margin: $center;
+  }
+  .content {
+    padding: 1em .5em;
   }
 }
 
@@ -116,15 +123,15 @@ input[type="password"] {
   height: $full;
   width: $full;
   z-index: 10;
-  background-color: $grey;
-  opacity: .8;
+  background-color: rgba(42, 46, 48, .8);
   .modal-inner {
-    background: $dark-grey;
-    color: $white;
+    background: $white;
+    color: $dark-grey;
     opacity: none;
     position: relative;
     z-index: 12;
     height: $full;
+    box-shadow: 1px 1px 20px 0px #000;
     .close-modal {
       height: 3em;
       span.btn {
