@@ -10,7 +10,7 @@ angular.module('profileCtrl', [])
         // set user details
         $scope.user = user.data;
         $scope.miles = []; // store new object values
-        console.log($scope.user);
+        //console.log($scope.user);
 
         $scope.show_car_form = false; // state form for ng-show add-car form
 
@@ -21,10 +21,10 @@ angular.module('profileCtrl', [])
           });
         }
 
-        console.log($scope.arr);
+        //console.log($scope.arr);
       }).then(function() {
           getAvg();
-          console.log($scope.miles);
+          //console.log($scope.miles);
           $scope.setCar();
       });
     }
@@ -72,10 +72,6 @@ angular.module('profileCtrl', [])
 
     // add a new car to userProfile
     $scope.addNewCar = function() {
-      console.log($scope.add_model);
-      console.log($scope.add_brand);
-      console.log($scope.add_year);
-
       Car.addCar({
         model: $scope.add_model,
         brand: $scope.add_brand,
@@ -91,8 +87,8 @@ angular.module('profileCtrl', [])
     };
 
     $scope.removeCar = function(car_id) {
-      console.log(car_id);
-      console.log($scope.user.local.email);
+      //console.log(car_id);
+      //console.log($scope.user.local.email);
 
       Car.removeCar({
         email: $scope.user.local.email,

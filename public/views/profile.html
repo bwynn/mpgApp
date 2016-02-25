@@ -1,20 +1,24 @@
-<div class="inner-wrapper">
+<div class="outer-wrapper">
   <div class="profile">
-    <div class="profile-img">
-      <img src=""/>
-    </div>
-    <div class="profile-content">
-      <h4>username: {{user.details.username || "Update your profile and add a username"}}</h2>
-      <h4>email: {{user.local.email}}</h4>
-      <p class="btn"><a href="#">Update your profile</a></p>
-    </div>
+    <div class="inner-wrapper">
+      <div class="profile-img">
+        <img src=""/>
+      </div>
+      <div class="profile-content">
+        <h4>username: {{user.details.username || "Update your profile and add a username"}}</h2>
+        <h4>email: {{user.local.email}}</h4>
+        <p class="btn"><a href="#">Update your profile</a></p>
+      </div>
+    </div><!-- end inner wrapper -->
   </div>
   <div class="cars">
-    <p class="btn"><a href="#" ng-click="showCarForm()">Add a new car</a></p>
-    <div ng-repeat="car in user.details.car">
-      <a href="/profile/{{car.model.toLowerCase()}}" ng-click="setCar(car, mpg)"<span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span><span> / Average MPG: {{car.avg || "Needs average"}}</span></a>
-      <div class="delete-button"><button class="btn" ng-click="removeCar(car._id)">Delete Car</button></div>
-    </div>
+    <div class="inner-wrapper">
+      <p class="btn"><a href="#" ng-click="showCarForm()">Add a new car</a></p>
+      <div ng-repeat="car in user.details.car">
+        <a href="/profile/{{car.model.toLowerCase()}}" ng-click="setCar(car, mpg)"<span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span><span> / Average MPG: {{car.avg || "Needs average"}}</span></a>
+        <div class="delete-button"><button class="btn" ng-click="removeCar(car._id)">Delete Car</button></div>
+      </div>
+    </div><!-- end inner wrapper -->
   </div>
 
   <div class="modal add-car" ng-show="show_car_form">

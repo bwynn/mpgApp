@@ -2,8 +2,9 @@
 
 // PROFILE
 .profile {
+  background: $grey;
+  padding: 1em;
   .profile-content {
-    background: $grey;
     h4 {
       padding: $content-margins;
       color: $white;
