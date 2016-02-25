@@ -8,7 +8,7 @@ angular.module('carCtrl', [])
       return $rootScope;
     }, function() {
       $scope.car = $rootScope.car;
-      //$scope.avg = $rootScope.avg;
+      $scope.avg = $rootScope.avg;
     });
 
     function getData() {

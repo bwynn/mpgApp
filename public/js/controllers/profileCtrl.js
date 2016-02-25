@@ -9,6 +9,7 @@ angular.module('profileCtrl', [])
       User.get().then(function(user) {
         // set user details
         $scope.user = user.data;
+        $scope.miles = []; // store new object values
         console.log($scope.user);
 
         $scope.show_car_form = false; // state form for ng-show add-car form
@@ -19,8 +20,6 @@ angular.module('profileCtrl', [])
             $scope.arr.push({mpg: mpg.mpg, model: mpg.car}); // push it to the $scope.arr array
           });
         }
-
-        $scope.miles = []; // store new object values
 
         console.log($scope.arr);
       }).then(function() {
@@ -53,11 +52,11 @@ angular.module('profileCtrl', [])
 
         // iterate over the obj.miles array to set the obj.total value
         for (var k = 0; k < obj.mpg.length; k++) {
-          obj.total += obj.mpg[i];
+          obj.total += obj.mpg[k];
         }
 
         // set avg value, total / length
-        obj.avg = obj.total / obj.mpg.length;
+        obj.avg = (obj.total/obj.mpg.length).toFixed(2);
 
         $scope.miles.push(obj); // push object to array
         $scope.user.details.car[i].avg = obj.avg;
