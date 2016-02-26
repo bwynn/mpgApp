@@ -4,9 +4,23 @@
     overflow-y: scroll;
     .car-list {
       @include flex;
+      p {
+        margin: 0 .5em;
+        color: $white;
+      }
       .delete-btn {
         margin-left: auto;
       }
+    }
+  }
+}
+
+.car-view {
+  .car-details {
+    margin-top: 1em;
+    @include flex;
+    .detail-list {
+      margin-left: auto;
     }
   }
 }

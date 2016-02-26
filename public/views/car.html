@@ -1,7 +1,7 @@
 <div class="outer-wrapper car-view">
-  <div class="inner-wrapper">
+  <div class="inner-wrapper car-details">
     <h1>{{car.model}}</h1>
-    <ul>
+    <ul class="detail-list">
       <li><strong>Brand</strong>: {{car.brand}}</li>
       <li><strong>Year</strong>: {{car.year}}</li>
       <li><strong>Average MPG</strong>: {{car.avg}}</li>
@@ -29,7 +29,7 @@
         <p>Mpg: {{record.mpg}}</p>
         <p>Miles: {{record.miles}}</p>
         <p>Gallons: {{record.gallons}}</p>
-        <button ng-click="remove(record._id)" class="delete-btn">Delete</button>
+        <button ng-click="remove(record._id)" class="btn delete-btn">Delete</button>
       </div>
     </div>
   </div>

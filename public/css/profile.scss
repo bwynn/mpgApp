@@ -2,12 +2,11 @@
 
 // PROFILE
 .profile {
-  background: $dark-grey;
   padding: 1em;
   .profile-content {
     h4 {
       padding: $content-margins;
-      color: $white;
+      color: $dark-grey;
     }
   }
 }
@@ -15,7 +14,7 @@
 // CARS
 .cars {
   .content-container {
-    width: 50%;
+    width: $full;
     margin: $center;
   }
   // profile button container

@@ -9,8 +9,9 @@ html, body {
 body {
   font-family: 'Oxygen', helvetica, sans-serif;
   font-size: 20px;
-  background-color: #2A2E30;
-  color: #EDEBE4; }
+  background: url("../images/pch_orig.jpg") no-repeat;
+  background-size: cover;
+  color: #2A2E30; }
 
 h1 {
   font-size: 40px;
@@ -74,6 +75,7 @@ input[type="password"]:focus {
     background: #3E4447;
     padding: 1em;
     height: 50vh;
+    max-width: 700px;
     overflow-y: scroll;
     border: 1px solid #EDEBE4;
     border-radius: 2px; }
@@ -194,18 +196,27 @@ input[type="password"]:focus {
   .car-view .content-container .car-list {
     -webkit-display: flexbox;
     display: flex; }
+    .car-view .content-container .car-list p {
+      margin: 0 .5em;
+      color: #EDEBE4; }
     .car-view .content-container .car-list .delete-btn {
       margin-left: auto; }
 
+.car-view .car-details {
+  margin-top: 1em;
+  -webkit-display: flexbox;
+  display: flex; }
+  .car-view .car-details .detail-list {
+    margin-left: auto; }
+
 .profile {
-  background: #2A2E30;
   padding: 1em; }
   .profile .profile-content h4 {
     padding: 1em 0.5em 0.5em;
-    color: #EDEBE4; }
+    color: #2A2E30; }
 
 .cars .content-container {
-  width: 50%;
+  width: 100%;
   margin: 0 auto; }
 .cars .profile-btns {
   -webkit-display: flexbox;

@@ -11,6 +11,8 @@ $side-margins: .5rem;
 $content-margins: 1em .5em .5em;
 $nav-height: 2.6em;
 $center: 0 auto;
+$desktop: 1024px;
+$tablet: 768px;
 
 // mixins
 @mixin flex {
@@ -28,6 +30,23 @@ $center: 0 auto;
   transition: .3s all ease-in-out;
 }
 
+// media queries
+// viewports
+// tablets/phones
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+// desktop
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// retina
+
 // Global Elements, formatting
 html, body {
   width: $full;
@@ -40,8 +59,10 @@ html, body {
 body {
   font-family: 'Oxygen', helvetica, sans-serif;
   font-size: $font;
-  background-color: $dark-grey;
-  color: $white;
+  //background-color: $dark-grey;
+  background: url('../images/pch_orig.jpg') no-repeat;
+  background-size: cover;
+  color: $dark-grey;
 }
 
 h1 {
@@ -117,6 +138,7 @@ input[type="password"] {
     background: $grey;
     padding: 1em;
     height: 50vh;
+    max-width: 700px;
     overflow-y: scroll;
     border: 1px solid $white;
     border-radius: 2px;
