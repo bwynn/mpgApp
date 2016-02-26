@@ -23,16 +23,14 @@
       </div>
     </form>
 
-    <table>
-      <tbody>
-        <tr ng-repeat="record in user.details.record | filter: car.model | orderBy: 'record.time': true">
-          <td>Date: {{record.time | date: 'short'}}</td>
-          <td>Mpg: {{record.mpg}}</td>
-          <td>Miles: {{record.miles}}</td>
-          <td>Gallons: {{record.gallons}}</td>
-          <td><button ng-click="remove(record._id)">Delete</button></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="content-container">
+      <div class="car-list" ng-repeat="record in user.details.record | filter: car.model | orderBy: 'record.time': true">
+        <p>Date: {{record.time | date: 'short'}}</p>
+        <p>Mpg: {{record.mpg}}</p>
+        <p>Miles: {{record.miles}}</p>
+        <p>Gallons: {{record.gallons}}</p>
+        <button ng-click="remove(record._id)" class="delete-btn">Delete</button>
+      </div>
+    </div>
   </div>
 </div>

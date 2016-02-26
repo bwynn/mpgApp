@@ -1,18 +1,18 @@
 // FORMS =======================================================================
 .form {
-  width: $full * 0.9;
+  width: $full;
   margin: auto;
   .form-group {
     margin: 1em;
     label {
       display: inline-block;
-      padding: .2em 0 .2em .5em;
-      width: 22.5%;
+      padding: .2em .5em;
+      width: 21.5%;
       text-align: right;
     }
     .text-input {
       font-size: 1.2em;
-      padding: .1em;
+      padding: .2em;
       width: 50%;
     }
   }

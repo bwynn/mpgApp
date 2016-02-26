@@ -69,7 +69,14 @@ input[type="password"]:focus {
     max-width: 700px;
     margin: 0 auto; }
   .container .content {
-    padding: 1em .5em; }
+    padding: 2em .5em; }
+  .container .content-container {
+    background: #3E4447;
+    padding: 1em;
+    height: 50vh;
+    overflow-y: scroll;
+    border: 1px solid #EDEBE4;
+    border-radius: 2px; }
 
 .modal {
   position: absolute;
@@ -86,7 +93,8 @@ input[type="password"]:focus {
     position: relative;
     z-index: 12;
     height: 100%;
-    box-shadow: 1px 1px 20px 0px #000; }
+    box-shadow: 1px 1px 20px 0px #000;
+    height: 50vh; }
     .modal .modal-inner .close-modal {
       height: 3em; }
       .modal .modal-inner .close-modal span.btn {
@@ -118,8 +126,8 @@ input[type="password"]:focus {
     margin: 0;
     background-color: #3E4447;
     border: none; }
-  .btn.submit-btn, .btn.btn-link {
-    width: 50%;
+  .btn.submit-btn {
+    width: 30%;
     display: block;
     margin: 0 auto; }
   .btn.btn-link {
@@ -166,23 +174,28 @@ input[type="password"]:focus {
     display: inline-block; }
 
 .form {
-  width: 90%;
+  width: 100%;
   margin: auto; }
   .form .form-group {
     margin: 1em; }
     .form .form-group label {
       display: inline-block;
-      padding: .2em 0 .2em .5em;
-      width: 22.5%;
+      padding: .2em .5em;
+      width: 21.5%;
       text-align: right; }
     .form .form-group .text-input {
       font-size: 1.2em;
-      padding: .1em;
+      padding: .2em;
       width: 50%; }
 
-.car-view table {
-  padding: 1em;
-  background-color: #3E4447; }
+.car-view .content-container {
+  max-height: 30vh;
+  overflow-y: scroll; }
+  .car-view .content-container .car-list {
+    -webkit-display: flexbox;
+    display: flex; }
+    .car-view .content-container .car-list .delete-btn {
+      margin-left: auto; }
 
 .profile {
   background: #2A2E30;
@@ -191,12 +204,23 @@ input[type="password"]:focus {
     padding: 1em 0.5em 0.5em;
     color: #EDEBE4; }
 
-.cars .inner-wrapper {
-  background: #3E4447;
-  padding: 1em; }
-.cars .car-link {
-  color: #EDEBE4; }
-.cars .delete-button {
-  display: inline-block; }
+.cars .content-container {
+  width: 50%;
+  margin: 0 auto; }
+.cars .profile-btns {
+  -webkit-display: flexbox;
+  display: flex; }
+.cars .profile-car {
+  -webkit-display: flexbox;
+  display: flex;
+  margin: 2em 1em; }
+  .cars .profile-car .car-link {
+    color: #EDEBE4;
+    display: inline-block; }
+  .cars .profile-car .delete-button {
+    margin-left: auto; }
+    .cars .profile-car .delete-button .delete-btn {
+      margin: 0 auto;
+      height: 1.6em; }
 
 /*# sourceMappingURL=main.css.map */

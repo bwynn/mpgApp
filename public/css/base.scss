@@ -111,7 +111,15 @@ input[type="password"] {
     margin: $center;
   }
   .content {
-    padding: 1em .5em;
+    padding: 2em .5em;
+  }
+  .content-container {
+    background: $grey;
+    padding: 1em;
+    height: 50vh;
+    overflow-y: scroll;
+    border: 1px solid $white;
+    border-radius: 2px;
   }
 }
 
@@ -132,6 +140,7 @@ input[type="password"] {
     z-index: 12;
     height: $full;
     box-shadow: 1px 1px 20px 0px #000;
+    height: 50vh;
     .close-modal {
       height: 3em;
       span.btn {

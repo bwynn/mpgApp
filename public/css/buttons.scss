@@ -24,9 +24,8 @@
     background-color: $grey;
     border: none;
   }
-  &.submit-btn,
-  &.btn-link {
-    width: $half;
+  &.submit-btn {
+    width: $half - 20%;
     display: block;
     margin: $center;
   }

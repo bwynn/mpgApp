@@ -1,6 +1,12 @@
 .car-view {
-  table {
-    padding: 1em;
-    background-color: $grey;
+  .content-container {
+    max-height: 30vh;
+    overflow-y: scroll;
+    .car-list {
+      @include flex;
+      .delete-btn {
+        margin-left: auto;
+      }
+    }
   }
 }

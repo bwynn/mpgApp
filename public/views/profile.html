@@ -12,11 +12,14 @@
     </div><!-- end inner wrapper -->
   </div>
   <div class="cars">
-    <div class="inner-wrapper">
-      <p class="btn"><a href="#" ng-click="showCarForm()">Add a new car</a></p>
-      <div ng-repeat="car in user.details.car">
+    <div class="content-container">
+      <div class="profile-btns">
+        <p class="btn" ng-click="showCarForm()"><a href="#">Add a new car</a></p>
+        <p class="btn"><a href="#">Edit Cars</a></p>
+      </div>
+      <div ng-repeat="car in user.details.car" class="profile-car">
         <a href="/profile/{{car.model.toLowerCase()}}" ng-click="setCar(car, mpg)" class="car-link"><span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span><span> / Average MPG: {{car.avg || "Needs average"}}</span></a>
-        <div class="delete-button"><button class="btn" ng-click="removeCar(car._id)">Delete Car</button></div>
+        <div class="delete-button"><button class="btn delete-btn" ng-click="removeCar(car._id)">Delete Car</button></div>
       </div>
     </div><!-- end inner wrapper -->
   </div>

@@ -14,14 +14,27 @@
 
 // CARS
 .cars {
-  .inner-wrapper {
-    background: $grey;
-    padding: 1em;
+  .content-container {
+    width: 50%;
+    margin: $center;
   }
-  .car-link {
-    color: $white;
+  // profile button container
+  .profile-btns {
+    @include flex;
   }
-  .delete-button {
-    display: inline-block;
+  .profile-car {
+    @include flex;
+    margin: 2em 1em;
+    .car-link {
+      color: $white;
+      display: inline-block;
+    }
+    .delete-button {
+      margin-left: auto;
+      .delete-btn {
+        margin: 0 auto;
+        height: 1.6em;
+      }
+    }
   }
 }
