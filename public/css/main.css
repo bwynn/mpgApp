@@ -51,10 +51,14 @@ a {
   a:hover {
     text-decoration: underline; }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  outline: none; }
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  box-shadow: 1px 3px 5px 0px #000; }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: none; }
 
 .login-link {
   height: 2em; }
@@ -68,7 +72,12 @@ input[type="password"]:focus {
     width: 100%; }
   .container .inner-wrapper {
     max-width: 700px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    background-color: rgba(237, 235, 228, 0.8);
+    border-radius: 5px;
+    position: relative;
+    top: 2em;
+    border: 2px solid #EDEBE4; }
   .container .content {
     padding: 2em .5em; }
   .container .content-container {
@@ -93,6 +102,7 @@ input[type="password"]:focus {
     color: #2A2E30;
     opacity: none;
     position: relative;
+    top: 4em;
     z-index: 12;
     height: 100%;
     box-shadow: 1px 1px 20px 0px #000;
@@ -211,6 +221,8 @@ input[type="password"]:focus {
 
 .profile {
   padding: 1em; }
+  .profile .inner-wrapper {
+    top: .5em; }
   .profile .profile-content h4 {
     padding: 1em 0.5em 0.5em;
     color: #2A2E30; }

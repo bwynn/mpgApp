@@ -3,6 +3,9 @@
 // PROFILE
 .profile {
   padding: 1em;
+  .inner-wrapper {
+    top: .5em;
+  }
   .profile-content {
     h4 {
       padding: $content-margins;

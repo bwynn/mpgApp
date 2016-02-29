@@ -13,6 +13,7 @@ angular.module('profileCtrl', [])
         //console.log($scope.user);
 
         $scope.show_car_form = false; // state form for ng-show add-car form
+        $scope.edit_cars = false;
 
         if ($scope.arr.length <= 0) {
           // get mpg records from records object in db
@@ -85,6 +86,18 @@ angular.module('profileCtrl', [])
         $scope.add_year = ''; // clear add_year
       });
     };
+
+    $scope.editCars = function() {
+      if ($scope.edit_cars == false) {
+        $scope.edit_cars = true;
+      }
+      else if ($scope.edit_cars == true) {
+        $scope.edit_cars = false;
+      }
+      else {
+        console.log("Issue with the edit cars switcher");
+      }
+    }
 
     $scope.removeCar = function(car_id) {
       //console.log(car_id);
