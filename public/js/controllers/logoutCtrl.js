@@ -1,5 +1,6 @@
 angular.module('logoutCtrl', [])
-  .controller('LogoutController', ['$scope', function($scope) {
-
-    $scope.hello = "Welcome! You made it to the Logout controller !";
+  .controller('LogoutController', ['$scope', 'Logout', function($scope, Logout) {
+    Logout.logUserOut().then(function() {
+      $scope.thanks = "Thanks! Come back soon!";
+    });
   }]);

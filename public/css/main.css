@@ -3,7 +3,6 @@ html, body {
   width: 100%;
   height: 100%;
   max-height: 100%;
-  overflow: hidden;
   margin: 0; }
 
 body {
@@ -54,11 +53,14 @@ a {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  box-shadow: 1px 3px 5px 0px #000; }
+  box-shadow: 1px 3px 10px 0px #000;
+  border-radius: 5px;
+  border: none; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="password"]:focus {
-    outline: none; }
+    outline: none;
+    border: 1px solid #A43233; }
 
 .login-link {
   height: 2em; }
@@ -77,9 +79,12 @@ input[type="password"] {
     border-radius: 5px;
     position: relative;
     top: 2em;
-    border: 2px solid #EDEBE4; }
+    border: 2px solid #EDEBE4;
+    box-shadow: 1px 3px 10px 0px #000; }
   .container .content {
     padding: 2em .5em; }
+    .container .content p {
+      margin: 0 2em; }
   .container .content-container {
     background: #3E4447;
     padding: 1em;
@@ -87,7 +92,7 @@ input[type="password"] {
     max-width: 700px;
     overflow-y: scroll;
     border: 1px solid #EDEBE4;
-    border-radius: 2px; }
+    border-radius: 5px; }
 
 .modal {
   position: absolute;
@@ -119,18 +124,17 @@ input[type="password"] {
   margin: .5em auto;
   font-size: 1.2em;
   padding: .2em .5em;
-  background-color: #EDEBE4;
+  background-color: #A43233;
   border-radius: 3px;
   border: 2px solid #A43233;
-  color: #C23A3B;
+  color: #EDEBE4;
   -webkit-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out; }
   .btn:focus {
     outline: none; }
   .btn:hover {
     cursor: pointer;
-    background-color: #C23A3B;
-    color: #EDEBE4; }
+    background-color: #C23A3B; }
   .btn.menu-button {
     float: right;
     width: 2em;
@@ -236,12 +240,17 @@ input[type="password"] {
 .cars .profile-car {
   -webkit-display: flexbox;
   display: flex;
-  margin: 2em 1em; }
+  margin: 1em 1em;
+  padding: 1em;
+  background-color: #C23A3B;
+  border-radius: 5px;
+  border: 2px solid #A43233; }
   .cars .profile-car .car-link {
     color: #EDEBE4;
     display: inline-block; }
   .cars .profile-car .delete-button {
-    margin-left: auto; }
+    margin-left: auto;
+    line-height: 1.2; }
     .cars .profile-car .delete-button .delete-btn {
       margin: 0 auto;
       height: 1.6em; }

@@ -26,13 +26,18 @@
   }
   .profile-car {
     @include flex;
-    margin: 2em 1em;
+    margin: 1em 1em;
+    padding: 1em;
+    background-color: $red;
+    border-radius: $border-radius;
+    border: 2px solid $dark-red;
     .car-link {
       color: $white;
       display: inline-block;
     }
     .delete-button {
       margin-left: auto;
+      line-height: 1.2;
       .delete-btn {
         margin: 0 auto;
         height: 1.6em;

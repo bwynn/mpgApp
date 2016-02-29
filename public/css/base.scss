@@ -13,7 +13,8 @@ $nav-height: 2.6em;
 $center: 0 auto;
 $desktop: 1024px;
 $tablet: 768px;
-$shadows: 1px 3px 5px 0px #000;
+$shadows: 1px 3px 10px 0px #000;
+$border-radius: 5px;
 
 // mixins
 @mixin flex {
@@ -53,7 +54,7 @@ html, body {
   width: $full;
   height: $full;
   max-height: $full;
-  overflow: hidden;
+  //overflow: hidden;
   margin: 0;
 }
 
@@ -113,8 +114,11 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   box-shadow: $shadows;
+  border-radius: $border-radius;
+  border: none;
   &:focus {
     outline: none;
+    border: 1px solid $dark-red;
   }
 }
 
@@ -137,13 +141,17 @@ input[type="password"] {
     max-width: 700px;
     margin: $center;
     background-color: rgba(237, 235, 228, 0.8);
-    border-radius: 5px;
+    border-radius: $border-radius;
     position: relative;
     top: 2em;
     border: 2px solid $white;
+    box-shadow: $shadows;
   }
   .content {
     padding: 2em .5em;
+    p {
+      margin: 0 2em;
+    }
   }
   .content-container {
     background: $grey;
@@ -152,7 +160,7 @@ input[type="password"] {
     max-width: 700px;
     overflow-y: scroll;
     border: 1px solid $white;
-    border-radius: 2px;
+    border-radius: $border-radius;
   }
 }
 

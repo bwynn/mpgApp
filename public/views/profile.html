@@ -7,15 +7,15 @@
       <div class="profile-content">
         <h4>username: {{user.details.username || "Update your profile and add a username"}}</h2>
         <h4>email: {{user.local.email}}</h4>
-        <p><a href="#">Update your profile</a></p>
+        <h4><a href="#">Update your profile</a></h4>
       </div>
     </div><!-- end inner wrapper -->
   </div>
   <div class="cars">
     <div class="content-container">
       <div class="profile-btns">
-        <p class="btn" ng-click="showCarForm()"><a href="#">Add a new car</a></p>
-        <p class="btn" ng-click="editCars()"><a href="#">Edit Cars</a></p>
+        <button class="btn" ng-click="showCarForm()">Add a new car</button>
+        <button class="btn" ng-click="editCars()">Edit Cars</button>
       </div>
       <div ng-repeat="car in user.details.car" class="profile-car">
         <a href="/profile/{{car.model.toLowerCase()}}" ng-click="setCar(car, mpg)" class="car-link"><span>{{car.year}} </span><span>{{car.brand}} </span><span>{{car.model}}</span><span> / Average MPG: {{car.avg || "Needs average"}}</span></a>
