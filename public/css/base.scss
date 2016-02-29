@@ -54,7 +54,7 @@ html, body {
   width: $full;
   height: $full;
   max-height: $full;
-  //overflow: hidden;
+  overflow: hidden;
   margin: 0;
 }
 
@@ -178,11 +178,13 @@ input[type="password"] {
     color: $dark-grey;
     opacity: none;
     position: relative;
-    top: 4em;
+    top: 0em;
     z-index: 12;
     height: $full;
     box-shadow: 1px 1px 20px 0px #000;
     height: 50vh;
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
     .close-modal {
       height: 3em;
       span.btn {
