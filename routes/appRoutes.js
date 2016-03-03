@@ -41,7 +41,7 @@ app.post('/api/signup', passport.authenticate('local-signup', {
 // logout routes ===============================================================
 // get
 app.get('/api/logout', function(req, res) {
-  console.log(req.session.passport.user);
+  console.log(req);
 
 
   res.json({message: "Don't let the door hit you on your way out"});

@@ -146,6 +146,10 @@ input[type="password"] {
     top: 2em;
     border: 2px solid $white;
     box-shadow: $shadows;
+    &.signup,
+    &.login {
+      top: 4em;
+    }
   }
   .content {
     padding: 2em .5em;

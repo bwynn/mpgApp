@@ -82,6 +82,8 @@ input[type="password"] {
     top: 2em;
     border: 2px solid #EDEBE4;
     box-shadow: 1px 3px 10px 0px #000; }
+    .container .inner-wrapper.signup, .container .inner-wrapper.login {
+      top: 4em; }
   .container .content {
     padding: 2em .5em; }
     .container .content p {
@@ -182,9 +184,14 @@ input[type="password"] {
         .global-header nav ul li:last-child {
           border-bottom: none; }
     .global-header nav.desktop-nav {
-      height: 50px;
+      height: 0px;
+      overflow: hidden;
       position: relative;
-      z-index: 15; }
+      z-index: 15;
+      -webkit-transition: .3s all ease-in-out;
+      transition: .3s all ease-in-out; }
+      .global-header nav.desktop-nav.opened {
+        height: 8em; }
     .global-header nav.mobile-nav {
       display: none; }
   .global-header h1 {
@@ -207,6 +214,8 @@ input[type="password"] {
       padding: .2em;
       width: 50%; }
 
+.car-view h1 {
+  padding: .3em; }
 .car-view .content-container {
   max-height: 30vh;
   overflow-y: scroll; }
@@ -225,6 +234,8 @@ input[type="password"] {
   display: flex; }
   .car-view .car-details .detail-list {
     margin-left: auto; }
+    .car-view .car-details .detail-list li {
+      padding: .5em 3em .5em 0; }
 
 .profile {
   padding: 1em; }

@@ -1,4 +1,7 @@
 .car-view {
+  h1 {
+    padding: .3em;
+  }
   .content-container {
     max-height: 30vh;
     overflow-y: scroll;
@@ -21,6 +24,9 @@
     @include flex;
     .detail-list {
       margin-left: auto;
+      li {
+        padding: .5em 3em .5em 0;
+      }
     }
   }
 }

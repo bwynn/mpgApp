@@ -35,9 +35,15 @@
       }
     }
     &.desktop-nav {
-      height: 50px;
+      height: 0px;
+      overflow: hidden;
       position: relative;
       z-index: 15;
+      -webkit-transition: .3s all ease-in-out;
+      transition: .3s all ease-in-out;
+      &.opened {
+        height: 8em;
+      }
     }
     &.mobile-nav {
       display: none;
