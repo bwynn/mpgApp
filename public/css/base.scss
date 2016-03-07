@@ -15,6 +15,7 @@ $desktop: 1024px;
 $tablet: 768px;
 $shadows: 1px 3px 10px 0px #000;
 $border-radius: 5px;
+$font-family: 'Open Sans', helvetica, sans-serif;
 
 // mixins
 @mixin flex {
@@ -59,7 +60,7 @@ html, body {
 }
 
 body {
-  font-family: 'Oxygen', helvetica, sans-serif;
+  font-family: $font-family;
   font-size: $font;
   //background-color: $dark-grey;
   background: url('../images/pch_orig.jpg') no-repeat;
@@ -116,10 +117,15 @@ input[type="password"] {
   box-shadow: $shadows;
   border-radius: $border-radius;
   border: none;
+  font-family: $font-family;
   &:focus {
     outline: none;
     border: 1px solid $dark-red;
   }
+}
+
+button {
+  font-family: $font-family;
 }
 
 

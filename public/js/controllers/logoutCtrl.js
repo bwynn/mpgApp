@@ -1,6 +1,7 @@
 angular.module('logoutCtrl', [])
-  .controller('LogoutController', ['$scope', 'Logout', function($scope, Logout) {
+  .controller('LogoutController', ['$scope', 'Logout', '$location', function($scope, Logout, $location) {
     Logout.logUserOut().then(function() {
-      $scope.thanks = "Thanks! Come back soon!";
+      alert("You have been successfully logged out.");
+      $location.url('/login');
     });
   }]);
