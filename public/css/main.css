@@ -11,7 +11,7 @@ body {
   font-size: 20px;
   background: url("../images/pch_orig.jpg") no-repeat;
   background-size: cover;
-  color: #2A2E30; }
+  color: #212526; }
 
 h1 {
   font-size: 40px;
@@ -44,7 +44,7 @@ p {
   line-height: 1.5; }
 
 a {
-  color: #2A2E30;
+  color: #212526;
   text-decoration: none;
   -webkit-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out; }
@@ -54,9 +54,9 @@ a {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  box-shadow: 1px 3px 10px 0px #000;
-  border-radius: 5px;
-  border: none;
+  box-shadow: 1px 1px 2px 0px #999;
+  border-radius: 2px;
+  border: 1px solid #FFF;
   font-family: "Open Sans", helvetica, sans-serif; }
   input[type="text"]:focus,
   input[type="email"]:focus,
@@ -78,14 +78,13 @@ button {
   .container .outer-wrapper {
     width: 100%; }
   .container .inner-wrapper {
-    max-width: 700px;
+    max-width: 736px;
     margin: 0 auto;
     background-color: rgba(237, 235, 228, 0.8);
-    border-radius: 5px;
+    border-radius: 2px;
     position: relative;
     top: 2em;
-    border: 2px solid #EDEBE4;
-    box-shadow: 1px 3px 10px 0px #000; }
+    border: 2px solid #EDEBE4; }
     .container .inner-wrapper.signup, .container .inner-wrapper.login {
       top: 4em; }
   .container .content {
@@ -99,7 +98,7 @@ button {
     max-width: 700px;
     overflow-y: scroll;
     border: 1px solid #EDEBE4;
-    border-radius: 5px; }
+    border-radius: 2px; }
 
 .modal {
   position: absolute;
@@ -111,7 +110,7 @@ button {
   background-color: rgba(42, 46, 48, 0.8); }
   .modal .modal-inner {
     background: #EDEBE4;
-    color: #2A2E30;
+    color: #212526;
     opacity: none;
     position: relative;
     top: 0em;
@@ -137,6 +136,7 @@ button {
   border-radius: 3px;
   border: 2px solid #A43233;
   color: #EDEBE4;
+  line-height: 1;
   -webkit-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out; }
   .btn:focus {
@@ -207,6 +207,7 @@ button {
   width: 100%;
   margin: auto; }
   .form .form-group {
+    height: 2em;
     margin: 1em; }
     .form .form-group label {
       display: inline-block;
@@ -242,12 +243,12 @@ button {
       padding: .5em 3em .5em 0; }
 
 .profile {
-  padding: 1em; }
+  padding: 1em 0 0 0; }
   .profile .inner-wrapper {
-    top: .5em; }
+    top: 0; }
   .profile .profile-content h4 {
     padding: 1em 0.5em 0.5em;
-    color: #2A2E30; }
+    color: #212526; }
 
 .cars .content-container {
   width: 100%;
@@ -261,7 +262,7 @@ button {
   margin: 1em 1em;
   padding: 1em;
   background-color: #C23A3B;
-  border-radius: 5px;
+  border-radius: 2px;
   border: 2px solid #A43233; }
   .cars .profile-car .car-link {
     color: #EDEBE4;

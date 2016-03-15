@@ -2,7 +2,7 @@
 $full: 100%;
 $half: 50%;
 $font: 20px;
-$dark-grey: #2A2E30;
+$dark-grey: #212526;
 $grey: #3E4447;
 $white: #EDEBE4;
 $dark-red: #A43233;
@@ -13,8 +13,8 @@ $nav-height: 2.6em;
 $center: 0 auto;
 $desktop: 1024px;
 $tablet: 768px;
-$shadows: 1px 3px 10px 0px #000;
-$border-radius: 5px;
+$shadows: 1px 1px 2px 0px #999;
+$border-radius: 2px;
 $font-family: 'Open Sans', helvetica, sans-serif;
 
 // mixins
@@ -116,7 +116,7 @@ input[type="email"],
 input[type="password"] {
   box-shadow: $shadows;
   border-radius: $border-radius;
-  border: none;
+  border: 1px solid #FFF;
   font-family: $font-family;
   &:focus {
     outline: none;
@@ -144,14 +144,14 @@ button {
     width: $full;
   }
   .inner-wrapper {
-    max-width: 700px;
+    max-width: 736px;
     margin: $center;
     background-color: rgba(237, 235, 228, 0.8);
     border-radius: $border-radius;
     position: relative;
     top: 2em;
     border: 2px solid $white;
-    box-shadow: $shadows;
+    //box-shadow: $shadows;
     &.signup,
     &.login {
       top: 4em;
