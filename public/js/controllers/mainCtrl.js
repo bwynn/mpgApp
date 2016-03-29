@@ -1,6 +1,9 @@
 angular.module('mainCtrl', ['ngAnimate'])
   .controller('MainController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
+    // set default logged in value
+    $rootScope.loggedIn = false;
+
     // handle communication between scopes
     $rootScope.$on('handleEmit', function(event, args) {
       // 1console.log(args.car);
@@ -11,6 +14,14 @@ angular.module('mainCtrl', ['ngAnimate'])
     $rootScope.$on('carAvgEmit', function(event, args) {
       $rootScope.avg = args.avg;
     });
+
+    $rootScope.$on('userLoggedIn', function(event, args) {
+      $rootScope.loggedIn = true;
+    });
+
+    $scope.loggedOut = function() {
+      $rootScope.loggedIn = false;
+    };
 
     // set controller states
     $scope.closed = true;

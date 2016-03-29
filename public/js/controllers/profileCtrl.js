@@ -21,6 +21,8 @@ angular.module('profileCtrl', [])
             $scope.arr.push({mpg: mpg.mpg, model: mpg.car}); // push it to the $scope.arr array
           });
         }
+        // set the logged in value and broadcast up to the root scope
+        setLoggedIn();
 
         //console.log($scope.arr);
       }).then(function() {
@@ -62,6 +64,10 @@ angular.module('profileCtrl', [])
         $scope.miles.push(obj); // push object to array
         $scope.user.details.car[i].avg = obj.avg;
       }
+    }
+
+    function setLoggedIn() {
+      $scope.$emit('userLoggedIn', {loggedIn: true});
     }
 
     // send link car model up to rootScope

@@ -23,6 +23,12 @@ $font-family: 'Open Sans', helvetica, sans-serif;
   display: flex;
 }
 
+@mixin flex-center {
+  @include flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
 @mixin strip {
     margin: 0;
     padding: 0;
@@ -55,7 +61,7 @@ html, body {
   width: $full;
   height: $full;
   max-height: $full;
-  overflow: hidden;
+  //overflow: hidden;
   margin: 0;
 }
 
@@ -126,6 +132,10 @@ input[type="password"] {
 
 button {
   font-family: $font-family;
+}
+
+.flex-center {
+  @include flex-center;
 }
 
 

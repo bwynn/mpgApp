@@ -2,7 +2,7 @@
   height: 2em;
   margin: .5em auto;
   font-size: 1.2em;
-  padding: .2em .5em;
+  padding: 0 0.5em;
   background-color: $dark-red;
   border-radius: 3px;
   border: 2px solid $dark-red;
@@ -25,11 +25,16 @@
     border: none;
   }
   &.submit-btn {
-    width: $half - 20%;
-    display: inline-block;
-    margin: $center;
+    display: block;
+    margin: 0.5em 0.5em 0.5em auto;
   }
   &.btn-link {
     text-align: center;
+    margin: 0.5em auto 0.5em 0.5em;
   }
+}
+
+.btn-link {
+  font-size: 1.1em;
+  line-height: 2;
 }
