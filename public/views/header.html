@@ -1,4 +1,5 @@
-<a href="/profile"><h1>MyMpg</h1></a>
+<a href="/profile" class="home-icon"><h1>MyMpg</h1></a>
+<p class="welcome">{{username || "Welcome, please sign up or log in."}}</p>
 <button class="fa fa-user btn menu-button" ng-click="menuBtn()"></button>
 <nav ng-show="!closed; loggedIn" class="nav desktop-nav" ng-class="open">
   <ul>

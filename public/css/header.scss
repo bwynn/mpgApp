@@ -6,6 +6,12 @@
   position: absolute;
   z-index: 20;
   border-bottom: 1px solid $white;
+  @include flex;
+  -webkit-flex-wrap: row-wrap;
+  flex-wrap: row-wrap;
+  .home-icon {
+    width: $third;
+  }
   // nav elements, which float beneath header row
   nav {
     position: relative;
@@ -39,6 +45,7 @@
       overflow: hidden;
       position: relative;
       z-index: 15;
+      top: 3em;
       -webkit-transition: .3s all ease-in-out;
       transition: .3s all ease-in-out;
       &.opened {

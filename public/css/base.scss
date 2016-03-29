@@ -9,13 +9,14 @@ $dark-red: #A43233;
 $red: #C23A3B;
 $side-margins: .5rem;
 $content-margins: 1em .5em .5em;
-$nav-height: 2.6em;
+$nav-height: 3em;
 $center: 0 auto;
 $desktop: 1024px;
 $tablet: 768px;
 $shadows: 1px 1px 2px 0px #999;
 $border-radius: 2px;
 $font-family: 'Open Sans', helvetica, sans-serif;
+$third: 33vw;
 
 // mixins
 @mixin flex {
@@ -102,6 +103,11 @@ ul {
 p {
   @include strip;
   line-height: 1.5;
+  &.welcome {
+    display: block;
+    color: $white;
+    width: $third;
+  }
 }
 
 a {

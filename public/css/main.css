@@ -41,6 +41,10 @@ p {
   margin: 0;
   padding: 0;
   line-height: 1.5; }
+  p.welcome {
+    display: block;
+    color: #EDEBE4;
+    width: 33vw; }
 
 a {
   color: #212526;
@@ -150,10 +154,10 @@ button {
     cursor: pointer;
     background-color: #C23A3B; }
   .btn.menu-button {
-    float: right;
-    width: 2em;
+    width: 33vw;
     height: 100%;
     margin: 0;
+    margin-left: auto;
     background-color: #3E4447;
     border: none; }
   .btn.submit-btn {
@@ -169,11 +173,17 @@ button {
 
 .global-header {
   width: inherit;
-  height: 2.6em;
+  height: 3em;
   background-color: #3E4447;
   position: absolute;
   z-index: 20;
-  border-bottom: 1px solid #EDEBE4; }
+  border-bottom: 1px solid #EDEBE4;
+  -webkit-display: flexbox;
+  display: flex;
+  -webkit-flex-wrap: row-wrap;
+  flex-wrap: row-wrap; }
+  .global-header .home-icon {
+    width: 33vw; }
   .global-header nav {
     position: relative;
     z-index: 21;
@@ -201,6 +211,7 @@ button {
       overflow: hidden;
       position: relative;
       z-index: 15;
+      top: 3em;
       -webkit-transition: .3s all ease-in-out;
       transition: .3s all ease-in-out; }
       .global-header nav.desktop-nav.opened {

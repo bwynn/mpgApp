@@ -17,19 +17,22 @@
     background-color: $red;
   }
   &.menu-button {
-    float: right;
-    width: 2em;
+    width: $third;
     height: $full;
     margin: 0;
+    margin-left: auto;
     background-color: $grey;
     border: none;
   }
   &.submit-btn {
     display: block;
+    // submit button to be placed above the .btn-link in dom tree,
+    // floats to the right side of the center of the viewport
     margin: 0.5em 0.5em 0.5em auto;
   }
   &.btn-link {
     text-align: center;
+    // floats to the left side of the center of the viewport
     margin: 0.5em auto 0.5em 0.5em;
   }
 }
