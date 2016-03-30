@@ -1,17 +1,19 @@
 <a href="/profile" class="home-icon"><h1>MyMpg</h1></a>
 <p class="welcome">{{username || "Welcome, please sign up or log in."}}</p>
-<button class="fa fa-user btn menu-button" ng-click="menuBtn()"></button>
-<nav ng-show="!closed; loggedIn" class="nav desktop-nav" ng-class="open">
-  <ul>
-    <li><a href="/profile" ng-click="menuBtn()">profile</a></li>
-    <li><a href="/profile" ng-click="menuBtn()">edit</a></li>
-    <li><a href="/logout" ng-click="menuBtn(); loggedOut()">logout</a></li>
-  </ul>
-</nav>
+<div class="btn-nav">
+  <button class="fa fa-user btn menu-button" ng-click="menuBtn()"></button>
+  <nav ng-show="!closed; loggedIn" class="nav desktop-nav" ng-class="open">
+    <ul>
+      <li><a href="/profile" ng-click="menuBtn()">profile</a></li>
+      <li><a href="/profile" ng-click="menuBtn()">edit</a></li>
+      <li><a href="/logout" ng-click="menuBtn(); loggedOut()">logout</a></li>
+    </ul>
+  </nav>
 
-<nav ng-show="!closed; !loggedIn" class="nav desktop-nav" ng-class="open">
-  <ul>
-    <li><a href="/signup" ng-click="menuBtn()">sign up</a></li>
-    <li><a href="/login" ng-click="menuBtn()">log in</a></li>
-  </ul>
-</nav>
+  <nav ng-show="!closed; !loggedIn" class="nav desktop-nav" ng-class="open">
+    <ul>
+      <li><a href="/signup" ng-click="menuBtn()">sign up</a></li>
+      <li><a href="/login" ng-click="menuBtn()">log in</a></li>
+    </ul>
+  </nav>
+</div>

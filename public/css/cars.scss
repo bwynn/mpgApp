@@ -8,8 +8,9 @@
     .car-list {
       @include flex;
       p {
-        margin: 0 .5em;
+        margin: .5em;
         color: $white;
+        font-size: .9em;
       }
       .delete-btn {
         margin-left: auto;

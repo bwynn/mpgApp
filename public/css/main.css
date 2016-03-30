@@ -138,7 +138,7 @@ button {
 
 .btn {
   height: 2em;
-  margin: .5em auto;
+  margin: .2em auto;
   font-size: 1.2em;
   padding: 0 0.5em;
   background-color: #A43233;
@@ -211,7 +211,7 @@ button {
       overflow: hidden;
       position: relative;
       z-index: 15;
-      top: 3em;
+      top: 1.65em;
       -webkit-transition: .3s all ease-in-out;
       transition: .3s all ease-in-out; }
       .global-header nav.desktop-nav.opened {
@@ -248,8 +248,9 @@ button {
     -webkit-display: flexbox;
     display: flex; }
     .car-view .content-container .car-list p {
-      margin: 0 .5em;
-      color: #EDEBE4; }
+      margin: .5em;
+      color: #EDEBE4;
+      font-size: .9em; }
     .car-view .content-container .car-list .delete-btn {
       margin-left: auto; }
 
